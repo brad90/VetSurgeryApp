@@ -12,15 +12,12 @@ get'/vet-surgery'do
 erb(:index)
 end
 
-#Show only one animals information in the vets
+#Get the information to create a new Animal
 get '/vet-surgery/new' do
-  @animal = Animal.new()
+  @animal = Animal.new(params)
+  @animal.save()
 erb(:new)
 end
-
-
-
-
 
 
 #Show only one animals information in the vets
