@@ -14,14 +14,20 @@ end
 
 #Get the information to create a new Animal
 get '/vet-surgery/new' do
-  @animal = Animal.new(params)
-  @animal.save()
-erb(:new)
+  @staff = Staff.all()
+  erb(:new)
+end
+
+
+post '/vet-surgery' do
+  @animals = Animal.new(params)
+  @animals.save()
+# erb(:new)
 end
 
 
 #Show only one animals information in the vets
-get '/animals/:id' do
+get '/vet-surgery/:id' do
   @animal = Animal.find(params[:id])
 erb(:show)
 end
