@@ -16,5 +16,5 @@ type_of_animal VARCHAR(255),
 owner_email VARCHAR(255),
 owner_phone_number VARCHAR(255),
 treatment_notes TEXT,
-vet INT4 REFERENCES staff(id)
+assigned_vet INT4 REFERENCES staff(id)
 );
