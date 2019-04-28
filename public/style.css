@@ -97,9 +97,48 @@ input:focus, textarea:focus, select:focus{
     width:100%;
   }
 
+  br{
+    height: 5px;
+  }
+
   .page_menu {
-  display: grid;
-  grid: auto, 25% 25% 25%  25%;
+    display: grid;
+    grid: auto, 25% 25% 25%  25%;
+  }
+
+  .grid_template_2{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    border: 1px solid black;
+  }
+
+  .item1{
+    display: grid;
+    grid-column: 1/2;
+    padding: 0;
+    width:100%;
+    height: auto;
+
+
+    line-height:15px;
+    color: black;
+    font-size: 16px;
+    font-weight:lighter;
+  }
+
+  .item2{
+    display: grid;
+    grid-column: 2;
+    padding: 0;
+    width:100%;
+    height: auto;
+
+
+    line-height:15px;
+    color: black;
+    font-size: 16px;
+    font-weight:lighter;
   }
 
   /* css for the index page */
@@ -118,74 +157,102 @@ input:focus, textarea:focus, select:focus{
   }
 
   .flex-container {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  float: left;
-  width: 100%;
-  height: 100px
-  padding: 20px;
-  border: 1px solid silver;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  align-items: center;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    float: left;
+    width: 100%;
+    height: 50px;
+    padding-bottom: 40px;
+    /* border: 1px solid silver; */
+    margin-bottom: 15px;
+    align-items: center;
 
 
 
-  -ms-box-orient: horizontal;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: flex;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
 
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-}
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
 
-.flex-container_end{
-  justify-content: flex-end;
-}
-.flex-container_center{
-  justify-content: center;
-}
-.flex-container_start{
-  justify-content: flex-start;
-}
+  .flex-container_end{
+    justify-content: flex-end;
+  }
+  .flex-container_center{
+    justify-content: center;
+  }
+  .flex-container_start{
+    justify-content: flex-start;
+  }
 
-.flex-container_spacing{
-  justify-content: space-around;
-}
+  .flex-container_spacing{
+    justify-content: space-around;
+  }
 
-.flex-item {
-  background: #FFD700;
-  padding: 0.5% 3% 0.5% 3%;
-  width:auto;
-  height: 50px;
-
-
-
-  line-height: 50px;
-  color: white;
-  font-weight: bold;
-  font-size: 2em;
-  text-align: center;
-}
-
-.flex-item2 {
-  padding: 0.5% 3% 0.5% 3%;
-  width:250px;
-  height: 50px;
+  .flex-item {
+    background: #FFD700;
+    padding: 0.5% 3% 0.5% 3%;
+    width:auto;
+    height: 50px;
 
 
 
-  line-height: 50px;
-  color: black;
-  font-size: 16px;
-  font-weight: lighter;
+    line-height: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+  }
 
-}
+  .flex-item2 {
+    padding: 0.5% 3% 0.5% 3%;
+    width:250px;
+    height: 50px;
+
+
+
+    line-height: 50px;
+    color: black;
+    font-size: 16px;
+    font-weight: lighter;
+  }
+
+
+  .flex-item3 {
+    padding: 0;
+    width:100%;
+    height: auto;
+
+
+    line-height:15px;
+    color: black;
+    font-size: 16px;
+    font-weight:400;
+  }
+
+  .flex-item4 {
+    padding: 1%;
+    width:100%;
+    height:100px;
+
+
+    line-height:15px;
+    background-color: white;
+    border:1px solid black;
+    color: black;
+    font-size: 16px;
+    font-weight:400;
+
+  }
+
 
   .button{
     display:flex
@@ -288,11 +355,11 @@ input:focus, textarea:focus, select:focus{
   }
 
   .custom-select {
-  display: grid;
-  grid-column: 1;
+    display: grid;
+    grid-column: 1;
 
-  font-family: Arial;
-}
+    font-family: Arial;
+  }
 
 
   .custom_select select{
@@ -300,20 +367,20 @@ input:focus, textarea:focus, select:focus{
   }
 
   .select selected {
-  background-color: DodgerBlue;
-}
+    background-color: DodgerBlue;
+  }
 
-/* Style the arrow inside the select element: */
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
 
   .show_page_left_column{
     grid-column: 1;
@@ -338,6 +405,13 @@ input:focus, textarea:focus, select:focus{
 
   #menu{
     height:90px;
+  }
+
+  #name{
+    display:flex;
+    height:50px;
+    font-size:32px;
+    padding-bottom: 5%;
   }
 
 

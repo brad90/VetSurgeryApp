@@ -1,29 +1,35 @@
-<div class="flex-container"><a class="flex-item" href="/vet-surgery/new">
-  <h3><%= @animal.name %></h3>
+<div  class="flex-container"><a id="name"  href="/vet-surgery/new">
+  <h1><%= @animal.name %></h1>
 </a></div>
 
-<div class="flex-container flex-container_start">
+<div class="grid_template_2">
 
-  <div class="flex-item2" >
-    <h3> D.O.B: <%= @animal.dob %></h3>
-    <h3> Species:<%= @animal.type_of_animal %></h3>
+  <div class = "container_form_left ">
+    <h2>Animal information</h2>
+    <br>
+    <h3 class=" flex-item3"><strong>D.O.B:</strong>  <%= @animal.dob %></h3>
+    <h3 class=" flex-item3"><strong> Species:</strong> <%= @animal.type_of_animal %></h3>
+  </div>
+
+  <div class="container_form_right">
+    <h2>Owner information</h2>
+    <br>
+    <h3 class=" flex-item3"><strong>Owner name: </strong>     <%= @animal.owner_name%></h3>
+    <h3 class=" flex-item3 "><strong>Owner e-mail:</strong>  <%= @animal.owner_email %></h3>
+    <h3 class=" flex-item3"> <strong>Owner phone number:</strong>     <%= @animal.owner_phone_number %></h3>
   </div>
 
 </div>
 
 
-<h2 class="container_form_left">Owner information</h2>
-<br>
-<br>
-<h3 class="container_form_left"> Owner Name:</h3>
-<p class="container_form_left"><%= @animal.owner_name%></p>
-<h3 class="container_form_right"> Owner E-mail:</h3>
-<p class="container_form_right"><%= @animal.owner_email %></p>
-<h3 class="container_form_left"> Owner Phone Number:</h3>
-<p class="container_form_left"><%= @animal.owner_phone_number %></p>
+<div class="flex_container">
+  <h2>Treatement Notes</h2>
+  <h3 class="flex-item4"><%= @animal.treatment_notes%></h3>
 </div>
-<div class="flex-container"><a class="flex-item" href="/vet-surgery/<%= @animal.id %>/edit">
-  <h4>Update animal info</h4>
-</a></div>
 
-<form action="/vet-surgery/<%= @animal.id %>/delete" method="POST"><input type="submit" value="Delete from records"></form>
+<div class="grid_template_2">
+<div class="container_form_left"><a class="flex-item" href="/vet-surgery/<%= @animal.id %>/edit"><h4>Update animal info<a/></h4>
+</div>
+
+<div class="container_form_left"><form  action="/vet-surgery/<%= @animal.id %>/delete" method="POST"><input class="flex-item" type="submit" value="Delete from records"></form>
+</div>
