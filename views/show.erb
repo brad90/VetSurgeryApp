@@ -1,3 +1,22 @@
-<p><%= @animal.name %></p>
-<p><%= @animal.dob %></p>
-<p><%= @animal.owner_email %></p>
+<div class="index_new_pet_button"><a href="/vet-surgery/edit">
+  <h3 class="button"> Add new pet+</h3>
+</a></div>
+<div class="container_show_page">
+<h1 class="container_form_left"><%= @animal.name %></h1>
+<br>
+<br>
+<h3 class="container_form_left"> Animal D.O.B:</h3>
+<p class="container_form_left"><%= @animal.dob %></p>
+<br>
+<br>
+<br>
+<h2 class="container_form_left">Owner information</h2>
+<br>
+<br>
+<h3 class="container_form_left"> Owner Name:</h3>
+<p class="container_form_left"><%= @animal.owner_name%></p>
+<h3 class="container_form_right"> Owner E-mail:</h3>
+<p class="container_form_right"><%= @animal.owner_email %></p>
+<h3 class="container_form_left"> Owner Phone Number:</h3>
+<p class="container_form_left"><%= @animal.owner_phone_number %></p>
+</div>

@@ -1,0 +1,18 @@
+<div class="page_menu">
+
+  <div class="index_new_pet_button"><a href="/vet-surgery/new_staff">
+    <h3 class="button"> Add new staff member+</h3>
+  </a></div>
+
+  <div class="container_data" >
+    <% @staff.each do |individual| %>
+
+    <div class="result_box">
+      <h2> <%= individual.first_name%> </h2>
+      <h4> <%= individual.last_name%> </h4>
+      <h4 id="update"><a href="/vet-surgery/staff/<%=individual.id %>">Show Details</a></h4>
+    </div>
+    <br>
+    <%end%>
+  </div>
+</div>

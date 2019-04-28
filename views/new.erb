@@ -1,39 +1,57 @@
-<form method="post" action="/vet-surgery">
-  <label for = "animal_name">Animal Name: </label>
-  <input type="text" name="name" id="animal_name">
-  <br>
-  <br>
-  <label for = "animal_dob">Animal D.O.B: </label>
-  <input type="text" name="dob" value="dd/mm/yy" id="animal_dob">
-  <br>
-  <br>
-  <label for = "animal_species">Animal species: </label>
-  <input type="text" name="type_of_animal" id="animal_species">
-  <br>
-  <br>
-  <label for = "owner_name">Owners name: </label>
-  <input type="text" name="owner_name" id="owner_name">
-  <br>
-  <br>
-  <label for = "owner_email">Owners email:</label>
-  <input type="text" name="owner_email" id="owner_email">
-  <br>
-  <br>
-  <label for = "owner_number">Owners_number: </label>
-  <input type="text" name="owner_phone_number" id="owners_number">
-  <br>
-  <br>
-  <label for = "treatment_notes">Treatment_notes:</label>
-  <input type="text" name="treatment_notes" id="treatment_notes">
-  <br>
-  <br>
-  <label for = "vet_select"> Assigned Vet: </label>
-  <select name="assigned_vet" id="vet_select">
-    <% @staff.each do|individual| %>
-              <option value= <%= individual.id %> ><%= individual.first_name %></option>
-    <% end %>
-  </select>
 
-  <input type="submit" value="save puppy"/>
 
-</form>
+<div>
+
+  <form method="post" action="/vet-surgery" class="container_form">
+    <h1 class="form_header" id="register_animal"> Register a New Animal </h1>
+    <br>
+    <h3 class="form_header"> Animals Details </h3>
+    <input placeholder="Animal name" type="text" name="name" class="container_form_left">
+    <!-- <label for = "animal_dob" class="container_form_right">Animal D.O.B: </label> -->
+    <input placeholder="Animal D.O.B" type="text" name="dob" id="animal_dob" class="container_form_right">
+    <br>
+    <br>
+    <!-- <label for = "animal_species" class="container_form_left">Animal species: > -->
+    <input placeholder="Animal species" type="text" name="type_of_animal" id="animal_species" class="container_form_left">
+
+    <!-- <label for = "owner_name" class="container_form_right" >Owners name: </label><br> -->
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+    <h3 class="form_header"> Owners Details </h3>
+    <input placeholder="Owners name" type="text" name="owner_name" class="container_form_left">
+    <!-- <label for = "animal_dob" class="container_form_right">Animal D.O.B: </label> -->
+    <input placeholder="Owners email" type="text" name="owner_email"  class="container_form_right">
+    <br>
+    <br>
+    <!-- <label for = "animal_species" class="container_form_left">Animal species: > -->
+    <input placeholder="Owners phone number" type="text" name="owner_number" id="animal_species" class="container_form_left">
+
+    <br>
+    <br>
+
+    <!-- <label for = "owner_email" class="container_form_left">Owners email:</label><br> -->
+    <!-- <input  type="text" name="owner_email" id="owner_email" class="container_form_right"> -->
+
+    <!-- <label for = "owner_number" class="container_form_right">Owners_number: </label><br> -->
+    <!-- <input placeholder="Owners phone number" type="text" name="owner_number" id="owner_number" class="container_form_left"> -->
+    <br>
+    <br>
+    <!-- <label for = "treatment_notes" class="container_form_left" >Treatment_notes:</label><br> -->
+    <!-- <label for = "vet_select" class="container_form_right"> Assigned Vet: </label><br> -->
+    <h3 class="form_header"> Assigned Vet </h3>
+    <select name="assigned_vet" id="vet_select" class="container_form_left">
+      <% @staff.each do|individual| %>
+      <option value= <%= individual.id %> ><%= individual.first_name %></option>
+      <% end %>
+    </select>
+
+
+    <input type="submit" value="save puppy" class="container_form_right" id="submit_button_form"/>
+
+  </form>
+</div>
