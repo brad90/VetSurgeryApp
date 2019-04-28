@@ -1,6 +1,25 @@
+<div class="page_menu">
 
-<% @animals.each do |animal| %>
-<h1> <%= animal.name%> </h1>
-<h4> <%= animal.dob%> </h4>
-<h4> <%= animal.type_of_animal%> </h4>
-<%end%>
+
+  <div class="container_header">
+    <h1> Oakland Surgery </h1>
+    <p> This is your daily dashboard </p>
+  </div>
+
+  <div class="new_pet_button"><a href="/vet-surgery/new">
+    <h3 class = "button">Add new pet+</h3>
+  </a></div>
+
+  <div class="container_data" >
+    <% @animals.each do |animal| %>
+
+    <div class="result_box">
+      <h2> <%= animal.name%> </h2>
+      <h4> <%= animal.type_of_animal%> </h4>
+      <h4> <%= animal.owner_name%> </h4>
+      <h4 id="update"><a href="/vet-surgery/<%= animal.id %>">Show Details</a></h4>
+    </div>
+    <br>
+    <%end%>
+  </div>
+</div>

@@ -8,7 +8,11 @@
   <br>
   <br>
   <label for = "animal_species">Animal species: </label>
-  <input type="text" name="animal_type" id="animal_species">
+  <input type="text" name="type_of_animal" id="animal_species">
+  <br>
+  <br>
+  <label for = "owner_name">Owners name: </label>
+  <input type="text" name="owner_name" id="owner_name">
   <br>
   <br>
   <label for = "owner_email">Owners email:</label>
@@ -29,5 +33,7 @@
               <option value= <%= individual.id %> ><%= individual.first_name %></option>
     <% end %>
   </select>
+
+  <input type="submit" value="save puppy"/>
 
 </form>

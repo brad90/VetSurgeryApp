@@ -2,7 +2,7 @@ require_relative('../db/sqlrunner.rb')
 
 
 class Animal
-  attr_reader :name, :dob, :type_of_animal, :treatment_notes, :id
+  attr_reader :name, :dob, :type_of_animal, :treatment_notes, :id, :owner_name
   attr_accessor :owner_email,:owner_phone_number, :assigned_vet
 
   def initialize(options)
@@ -10,6 +10,7 @@ class Animal
     @name = options['name']
     @dob = options['dob']
     @type_of_animal = options['type_of_animal']
+    @owner_name = options ['owner_name']
     @owner_email = options['owner_email']
     @owner_phone_number = options['owner_phone_number']
     @treatment_notes = options['treatment_notes']
@@ -24,6 +25,7 @@ class Animal
       name,
       dob,
       type_of_animal,
+      owner_name,
       owner_email,
       owner_phone_number,
       treatment_notes,
@@ -35,18 +37,19 @@ class Animal
       $4,
       $5,
       $6,
-      $7) RETURNING id"
-    values = [@name, @dob, @type_of_animal, @owner_email,
+      $7,
+      $8) RETURNING id"
+    values = [@name, @dob, @type_of_animal,@owner_name, @owner_email,
       @owner_phone_number, @treatment_notes, @assigned_vet]
     results = SqlRunner.run(sql, values)
     @id = results[0]['id']
   end
 
   def update
-    sql = "UPDATE animals SET (name, dob, type_of_animal,
+    sql = "UPDATE animals SET (name, dob, type_of_animal, owner_name,
     owner_email, owner_phone_number, treatment_notes, assigned_vet)
-    = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
-    values = [@name, @dob, @type_of_animal, @owner_email,
+    = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9"
+    values = [@name, @dob, @type_of_animal, @owner_name, @owner_email,
     @owner_phone_number, @treatment_notes, @assigned_vet, @id]
     SqlRunner.run(sql,values)
   end
