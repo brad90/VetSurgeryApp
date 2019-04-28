@@ -6,40 +6,45 @@ also_reload('./models/*')
 
 
 
-#Show all animals in the vets
+#Animals Index
 get'/vet-surgery'do
   @animals = Animal.all
 erb(:index)
 end
 
-#Show all the staff currently working
+#Staff Index
 get'/vet-surgery/staff'do
   @staff = Staff.all
 erb(:staff_index)
 end
 
-#Get the information to create a new Animal
+#Animal Create new animal
 get '/vet-surgery/new' do
   @staff = Staff.all()
   erb(:new)
 end
 
-#Get the information to create a new Staff
+#Staff create new staff memeber
 get '/vet-surgery/new_staff' do
   erb(:new_staff)
 end
 
+#Animal save new animal to db
 post '/vet-surgery' do
   @animals = Animal.new(params)
   @animals.save()
   redirect to '/vet-surgery'
 end
 
+#Staff save new animal to db
+
 post '/vet-surgery/staff' do
   @staff = Staff.new(params)
   @staff.save()
   redirect to '/vet-surgery/staff'
 end
+
+#Animal save new animal to db
 
 get '/vet-surgery/:id/edit' do
   @staff = Staff.all
@@ -54,8 +59,20 @@ get '/vet-surgery/:id' do
 erb(:show)
 end
 
+post '/vet-surgery/:id' do
+  animal = Animal.new(params)
+  animal.update
+  redirect to "/vet-surgery/#{params['id']}"
+end
+
 #Show only one vets information in the vets
 get '/vet-surgery/staff/:id' do
   @Staff = Staff.find(params[:id])
 erb(:show)
+end
+
+post '/vet-surgery/:id/delete' do
+  animal = Animal.find(params['id'])
+  animal.delete
+  redirect to '/vet-surgery'
 end

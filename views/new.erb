@@ -44,14 +44,16 @@
     <!-- <label for = "treatment_notes" class="container_form_left" >Treatment_notes:</label><br> -->
     <!-- <label for = "vet_select" class="container_form_right"> Assigned Vet: </label><br> -->
     <h3 class="form_header"> Assigned Vet </h3>
+    <div class="custom_select">
     <select name="assigned_vet" id="vet_select" class="container_form_left">
       <% @staff.each do|individual| %>
       <option value= <%= individual.id %> ><%= individual.first_name %></option>
       <% end %>
     </select>
+  </div>
 
 
-    <input type="submit" value="save puppy" class="container_form_right" id="submit_button_form"/>
+    <input type="submit" value="save puppy"/>
 
   </form>
 </div>

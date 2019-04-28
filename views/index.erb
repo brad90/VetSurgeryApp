@@ -1,19 +1,27 @@
-<div class="page_menu">
 
-  <div class="index_new_pet_button"><a href="/vet-surgery/new">
-    <h3 class="button"> Add new pet+</h3>
+
+
+  <div class="flex-container flex-container_end"><a class="flex-item" href="/vet-surgery/new">
+    <h4> Add new pet+</h4>
   </a></div>
 
-  <div class="container_data" >
-    <% @animals.each do |animal| %>
+  <table class="table">
+    <tr class="table_row">
+      <th class="table_data">Animal Name</th>
+      <th class="table_data">Aninal Type</th>
+      <th class="table_data">Owner Name</th>
+      <th class="table_data table_data_extra">Details</th>
+    </tr>
+  </table>
 
-    <div class="result_box">
-      <h2> <%= animal.name%> </h2>
-      <h4> <%= animal.type_of_animal%> </h4>
-      <h4> <%= animal.owner_name%> </h4>
-      <h4 id="update"><a href="/vet-surgery/<%= animal.id %>">Show Details</a></h4>
-    </div>
-    <br>
-    <%end%>
-  </div>
-</div>
+  <% @animals.each do |animal| %>
+  <table class="table">
+    <tr class="table_row">
+      <td class="table_data"><%= animal.name%></td>
+      <td class="table_data"><%= animal.type_of_animal%></td>
+      <td class="table_data"><%= animal.owner_name%></td>
+      <td class=" table_data table_data_extra"><a href="/vet-surgery/<%= animal.id %>">Show Details</a></td>
+    </tr>
+  </table>
+  <%end%>
+  <br>
