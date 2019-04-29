@@ -25,7 +25,7 @@ end
 post '/vet-surgery/animals' do
   @animals = Animal.new(params)
   @animals.save()
-  redirect to '/vet-surgery'
+  redirect to '/vet-surgery/animals'
 end
 
 #Animal Update info
@@ -35,15 +35,22 @@ get '/vet-surgery/animals/:id/edit' do
   erb(:edit)
 end
 
-#Animal save updates
-post '/vet-surgery/animals/:id' do
-  animal = Animal.new(params)
-  animal.update
-  redirect to "/vet-surgery/#{params['id']}"
-end
-
 #Animal show one animal
 get '/vet-surgery/animals/:id' do
   @animal = Animal.find(params[:id])
 erb(:show)
+end
+
+#Animal save updates
+post '/vet-surgery/animals/:id' do
+  animal = Animal.new(params)
+  animal.update
+  redirect to "/vet-surgery/animals/#{params['id']}"
+end
+
+#Animal save updates
+post '/vet-surgery/animals/:id/delete' do
+  animal = Animal.new(params)
+  animal.delete
+  redirect to "/vet-surgery/animals"
 end
