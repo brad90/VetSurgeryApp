@@ -1,6 +1,6 @@
 
 body {
-  background-color: #e3e3e3;
+  background-color: #EFEFEF;
   padding: 2% 17% 10% 17%;
 }
 
@@ -149,16 +149,10 @@ input:focus, textarea:focus, select:focus{
   /* css for the index page */
 
 
-  .button1{
-    display: flex;
-    justify-content: flex-end;
-    color: white;
-    border-radius:3px;
-    width:150px;
-    height:50px;
-    text-align: center;
-    background-color: #FFD700;
-    margin-bottom: 5%;
+
+
+  .margin_left{
+    margin-left: -5%;
   }
 
   .flex-container {
@@ -226,6 +220,28 @@ input:focus, textarea:focus, select:focus{
     text-align: center;
   }
 
+  .margin_right{
+    margin-right:5%
+  }
+
+  #submit_button{
+    background: #FFD700;
+    padding: 0.5% % 0.5% 2%;
+    width:auto;
+    height: 50px;
+    border-radius: 0;
+    border:0;
+
+
+
+    line-height: 25px;
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+
+  }
+
   .flex-item2 {
     padding: 0.5% 3% 0.5% 3%;
     width:250px;
@@ -246,10 +262,10 @@ input:focus, textarea:focus, select:focus{
     height: auto;
 
 
-    line-height:15px;
+    line-height:10px;
     color: black;
     font-size: 16px;
-    font-weight:400;
+    font-weight:lighter;
   }
 
   .button_font{
@@ -277,12 +293,65 @@ input:focus, textarea:focus, select:focus{
     grid-column-end: 6;
   }
 
+  .margin_top{
+    margin-top: 5%;
+  }
+
+  .float_left{
+    float:left;
+  }
+
+  .footer{
+    background-color: black;
+    height: 100px;
+    width:100%;
+  }
+
+  .show_info{
+    background-color: white;
+    height: 200px;
+    width:250px;
+    padding:2% 4% 2% 4%;
+    float:left;
+    box-shadow:5px 5px 5px 5px rgba(165,165,165,0.2);
+    margin-left: -1%;
+  }
+  .show_info2{
+    background-color: white;
+    height: 200px;
+    width:350px;
+    padding:2% 4% 2% 4%;
+    box-shadow:5px 5px 5px 5px rgba(165,165,165,0.2);
+    margin-left: 5%;
+  }
+
+  .title{
+      padding:2% 4% 2% 4%;
+      margin-left: -10%;
+    }
+
+  .buttons_show{
+    height: auto;
+    width: auto;
+    display: inline-block;
+  }
+
+  .float_right{
+    float:right;
+  }
+
+.padding_top{
+  padding-top:10%;
+}
+
   .flex-item5 {
     background: #FFD700;
     padding: 0.1% 2% 0.1% 2%;
     width:auto;
-    height: auto;
+    height: 50px;
+    align-items: center;
     margin-right: 10px;
+    margin-top: 15px;
 
 
 

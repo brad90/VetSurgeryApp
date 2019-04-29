@@ -1,48 +1,74 @@
 
 
-<div  class="flex-container"><a id="name"  href="/vet-surgery/animals/new">
-  <h1><%= @animal.name %></h1>
+<div  class="flex-container "><a id="name"  href="/vet-surgery/animals/new">
+  <h1 class="padding_left"><%= @animal.name %></h1>
 </a></div>
 
-  <div class="flex-container flex-container_between">
+<div class="flex-container flex-container_spacing margin_top ">
 
-    <div>
-    <h2>Animal information</h2>
+  <div class="show_info ">
+    <h2>Animal information:</h2>
     <br>
     <h3 class=" flex-item3"><strong>D.O.B:</strong>  <%= @animal.dob %></h3>
     <h3 class=" flex-item3"><strong> Species:</strong> <%= @animal.type_of_animal %></h3>
-    </div>
+  </div>
 
-    <div>
-    <h2>Owner information</h2>
+  <div class="show_info2 ">
+    <h2>Owner information:</h2>
     <br>
     <h3 class=" flex-item3"><strong>Owner name: </strong>     <%= @animal.owner_name%></h3>
     <h3 class=" flex-item3 "><strong>Owner e-mail:</strong>  <%= @animal.owner_email %></h3>
-    <h3 class=" flex-item3"> <strong>Owner phone number:</strong>     <%= @animal.owner_phone_number %></h3>
-    </div>
+    <h3 class=" flex-item3"> <strong>Owner phone number:</strong>  <%= @animal.owner_phone_number %></h3>
+  </div>
 
 </div>
 
-
-
-
-<div class="flex_container" id="flex_container1">
-
+<div class="flex-container margin_top" >
   <h2>Treatement Notes:</h2>
+</div>
+
+
+<div class="flex-container flex-container_end">
+
+  <div class="flex-item5 margin_right"><a href="/vet-surgery/animals/<%= @animal.id %>/edit"><h4 class="button_font"> Update Animal Info</h4></a>
+  </div>
+  <div>
+    <br>
+    <form action="/vet-surgery/animals/<%=@animal.id %>/delete" method="POST">
+      <input id="submit_button" type="submit" value="Delete from records"/>
+    </form>
+  </div>
+
+</div>
+
+<div class="flex-container flex-container_end">
   <% @animal_visits.each do |visit|%>
   <h3 class="flex-item4">
-  <%= visit.check_in%> : <%=visit.treatment_notes %></h3>
-  <% end %>
+    <%= visit.check_in%> : <%=visit.treatment_notes %></h3>
+    <% end %>
 </div>
 
-<div class="grid_template_2">
-<div class="container_form_left">
-  <a class="flex-item" href="/vet-surgery/animals/<%= @animal.id %>/edit">
+
+
+  <!-- <div class="flex_container margin_top">
+
+
+
+  <h2>Treatement Notes:</h2>
+
+  <div class="flex-item5">
+  <a href="/vet-surgery/animals/<%= @animal.id %>/edit">
   <h4>Update animal info<a/></h4>
 </div>
 
-<div class="container_form_left">
-  <form  action="/vet-surgery/animals/<%=@animal.id %>/delete" method="POST">
-  <input class="flex-item" type="submit" value="Delete from records"/>
-  </form>
+<div>
+<form class="flex-item5" action="/vet-surgery/animals/<%=@animal.id %>/delete" method="POST">
+<input  type="submit" value="Delete from records"/>
+</form>
 </div>
+
+<% @animal_visits.each do |visit|%>
+<h3 class="flex-item4">
+<%= visit.check_in%> : <%=visit.treatment_notes %></h3>
+<% end %>
+</div> -->
