@@ -1,27 +1,51 @@
+<div class="flex-container flex-container_spacing">
+  <div class = "flex-item "><h3> Animals in Care </h3><h3><%= Animal.count %> </h3></div>
+  <div class = "flex-item "></div>
+</div>
 
 
+<div class="flex-container flex-container_end ">
 
-  <div class="flex-container flex-container_end"><a class="flex-item" href="/vet-surgery/animals/new">
-    <h4> Add new pet+</h4>
-  </a></div>
+  <div class=>
+  <h2>Current Animals in Surgery:</h2>
+  </div>
 
-  <table class="table">
-    <tr class="table_row">
-      <th class="table_data">Animal Name</th>
-      <th class="table_data">Aninal Type</th>
-      <th class="table_data">Owner Name</th>
-      <th class="table_data table_data_extra">Details</th>
-    </tr>
-  </table>
+  <div class="flex-item5">
+    <a href="/vet-surgery/animals/new"><h4 class="button_font"> Find exisitng pet+</h4></a>
+  </div>
+
+  <div class="flex-item5">
+    <a href="/vet-surgery/animals/new"><h4 class="button_font"> Add new pet+</h4></a>
+  </div>
+
+
+</div>
+
+<table class="table">
+  <tr class="table_row">
+    <th class="table_data_header">Animal Name</th>
+    <th class="table_data_header">Animal Type</th>
+    <th class="table_data_header">Owner Name</th>
+    <th class="table_data_header">Check_in</th>
+    <th class="table_data_header">Check_out</th>
+    <th class="table_data_header table_data_extra_header">Details</th>
+  </tr>
+</table>
 
   <% @animals.each do |animal| %>
-  <table class="table">
-    <tr class="table_row">
-      <td class="table_data"><%= animal.name%></td>
-      <td class="table_data"><%= animal.type_of_animal%></td>
-      <td class="table_data"><%= animal.owner_name%></td>
-      <td class=" table_data table_data_extra"><a href="/vet-surgery/animals/<%= animal.id %>">Show Details</a></td>
-    </tr>
-  </table>
-  <%end%>
-  <br>
+<table class="table">
+  <tr class="table_row">
+    <td class="table_data"><%= animal.name%></td>
+    <td class="table_data"><%= animal.type_of_animal%></td>
+    <td class="table_data"><%= animal.owner_name%></td>
+    <td class="table_data"><%= animal.name%></td>
+    <td class="table_data"><%= animal.name%></td>
+    <td class=" table_data table_data_extra"><a href="/vet-surgery/animals/<%= animal.id %>">Show Details<i class="material-icons">
+list
+</i></a></td>
+  </tr>
+
+</table>
+<%end%>
+
+<br>

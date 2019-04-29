@@ -3,7 +3,7 @@ require('sinatra/contrib/all')
 require_relative('../models/animal')
 require_relative('../models/staff')
 also_reload('./models/*')
-require('pry')
+require( 'pry-byebug' )
 
 
 
@@ -37,8 +37,15 @@ end
 
 #Animal show one animal
 get '/vet-surgery/animals/:id' do
-  @animal = Animal.find(params[:id])
+  @animal = Animal.find(params['id'])
+
+  @animal_visits = @animal.visits
 erb(:show)
+end
+
+#Animal show one animal
+get '/vet-surgery/animals/find' do
+erb(:find_existing)
 end
 
 #Animal save updates

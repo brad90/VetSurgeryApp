@@ -1,30 +1,38 @@
+
+
 <div  class="flex-container"><a id="name"  href="/vet-surgery/animals/new">
   <h1><%= @animal.name %></h1>
 </a></div>
 
-<div class="grid_template_2">
+  <div class="flex-container flex-container_between">
 
-  <div class = "container_form_left ">
+    <div>
     <h2>Animal information</h2>
     <br>
     <h3 class=" flex-item3"><strong>D.O.B:</strong>  <%= @animal.dob %></h3>
     <h3 class=" flex-item3"><strong> Species:</strong> <%= @animal.type_of_animal %></h3>
-  </div>
+    </div>
 
-  <div class="container_form_right">
+    <div>
     <h2>Owner information</h2>
     <br>
     <h3 class=" flex-item3"><strong>Owner name: </strong>     <%= @animal.owner_name%></h3>
     <h3 class=" flex-item3 "><strong>Owner e-mail:</strong>  <%= @animal.owner_email %></h3>
     <h3 class=" flex-item3"> <strong>Owner phone number:</strong>     <%= @animal.owner_phone_number %></h3>
-  </div>
+    </div>
 
 </div>
 
 
-<div class="flex_container">
-  <h2>Treatement Notes</h2>
-  <h3 class="flex-item4"><%= @animal.treatment_notes%></h3>
+
+
+<div class="flex_container" id="flex_container1">
+
+  <h2>Treatement Notes:</h2>
+  <% @animal_visits.each do |visit|%>
+  <h3 class="flex-item4">
+  <%= visit.check_in%> : <%=visit.treatment_notes %></h3>
+  <% end %>
 </div>
 
 <div class="grid_template_2">

@@ -90,11 +90,16 @@ input:focus, textarea:focus, select:focus{
     color:#1D1D1D
   }
 
-  table, th, td {
+  table,td {
     border-bottom:10px solid #e3e3e3;
     border-collapse: collapse;
     height: 15px;
     width:100%;
+  }
+
+  th{
+    font-weight: 400;
+    font-size: 18px;
   }
 
   br{
@@ -163,9 +168,8 @@ input:focus, textarea:focus, select:focus{
     list-style: none;
     float: left;
     width: 100%;
-    height: 50px;
-    padding-bottom: 40px;
-    /* border: 1px solid silver; */
+    height: auto;
+    padding-bottom:10px;
     margin-bottom: 15px;
     align-items: center;
 
@@ -183,6 +187,10 @@ input:focus, textarea:focus, select:focus{
     flex-flow: row wrap;
   }
 
+  .flex_container_white{
+    background-color: white;
+  }
+
   .flex-container_end{
     justify-content: flex-end;
   }
@@ -197,11 +205,17 @@ input:focus, textarea:focus, select:focus{
     justify-content: space-around;
   }
 
+  .flex-container_between{
+    justify-content:space-between;
+  }
+
+
+
   .flex-item {
     background: #FFD700;
     padding: 0.5% 3% 0.5% 3%;
     width:auto;
-    height: 50px;
+    height: auto;
 
 
 
@@ -238,6 +252,47 @@ input:focus, textarea:focus, select:focus{
     font-weight:400;
   }
 
+  .button_font{
+    font-size: 12px;
+  }
+
+  .flex_item4{
+    background-color: white;
+    height:50px;
+    width: 50px;
+
+    color:black;
+    font-size: 20px;
+  }
+
+  .grid_template_6{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-rows: auto;
+  }
+
+  .grid_col_1{
+    display: grid;
+    grid-column-start: 5;
+    grid-column-end: 6;
+  }
+
+  .flex-item5 {
+    background: #FFD700;
+    padding: 0.1% 2% 0.1% 2%;
+    width:auto;
+    height: auto;
+    margin-right: 10px;
+
+
+
+    line-height: 25px;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+  }
+
   #text_box{
     height: 100px;
     width:100%;
@@ -256,8 +311,9 @@ input:focus, textarea:focus, select:focus{
     color: black;
     font-size: 16px;
     font-weight:400;
-
   }
+
+
 
 
   .button{
@@ -268,17 +324,37 @@ input:focus, textarea:focus, select:focus{
 
 
   .table_data{
-    width:150px;
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 12px;
+    text-align: left;
+
+    padding:2%;
+    width:150px;
+    background-color: white;
+    border-right: 1px solid grey;
+  }
+
+  .table_data_header{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+
+    width:150px;
     padding:2%;
     background-color: white;
-    text-align: left;
     border-right: 1px solid grey;
   }
 
   .table_data_extra{
     border-right: 0px solid white;
+    background-color:white;
+    text-decoration: underline;
+  }
+
+  .table_data_extra_header{
+    border-right: 0px solid white;
+    background-color:white;
   }
 
   .table_row{

@@ -1,8 +1,10 @@
 require_relative('../db/sqlrunner.rb')
+require_relative('./visit.rb')
+require( 'pry-byebug' )
 
 
 class Animal
-  attr_reader :name, :dob, :type_of_animal, :treatment_notes, :id, :owner_name
+  attr_reader :name, :dob, :type_of_animal, :id, :owner_name
   attr_accessor :owner_email,:owner_phone_number, :assigned_vet
 
   def initialize(options)
@@ -13,7 +15,6 @@ class Animal
     @owner_name = options ['owner_name']
     @owner_email = options['owner_email']
     @owner_phone_number = options['owner_phone_number']
-    @treatment_notes = options['treatment_notes']
     @assigned_vet = options['assigned_vet']
   end
 
@@ -28,7 +29,6 @@ class Animal
       owner_name,
       owner_email,
       owner_phone_number,
-      treatment_notes,
       assigned_vet
     )VALUES(
       $1,
@@ -37,20 +37,19 @@ class Animal
       $4,
       $5,
       $6,
-      $7,
-      $8) RETURNING id"
-    values = [@name, @dob, @type_of_animal,@owner_name, @owner_email,
-      @owner_phone_number, @treatment_notes, @assigned_vet]
+      $7
+      )RETURNING id"
+    values = [@name, @dob, @type_of_animal, @owner_name, @owner_email, @owner_phone_number, @assigned_vet]
     results = SqlRunner.run(sql, values)
     @id = results[0]['id']
   end
 
   def update
     sql = "UPDATE animals SET (name, dob, type_of_animal, owner_name,
-    owner_email, owner_phone_number, treatment_notes, assigned_vet)
-    = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9"
+    owner_email, owner_phone_number, assigned_vet)
+    = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
     values = [@name, @dob, @type_of_animal, @owner_name, @owner_email,
-    @owner_phone_number, @treatment_notes, @assigned_vet, @id]
+    @owner_phone_number, @assigned_vet, @id]
     SqlRunner.run(sql,values)
   end
   #
@@ -58,6 +57,41 @@ class Animal
     sql = "DELETE FROM animals WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def visits()
+    sql = "SELECT * FROM visits
+            WHERE animal_id = $1"
+    values=[@id]
+    result = SqlRunner.run(sql, values)
+    visits = result.map {|data| Visit.new(data)}
+    return visits
+  end
+
+  def check_in
+    sql = "SELECT * FROM visits
+          WHERE animal_id = $1"
+    values=[@id]
+    result = SqlRunner.run(sql, values)
+    visit = result.map { |data| Visit.new(data)}.first
+    return visit.check_in
+  end
+
+  def check_out
+    sql = "SELECT * FROM visits
+          WHERE animal_id = $1"
+    values=[@id]
+    result = SqlRunner.run(sql, values)
+    visit = result.map { |data| Visit.new(data)}.first
+    return visit.check_out
+  end
+
+
+
+  def self.count()
+    sql = "SELECT COUNT(*) FROM animals"
+    result = SqlRunner.run(sql)[0]['count']
+    return result
   end
 
   def self.delete_all()
@@ -83,6 +117,9 @@ class Animal
     animal_list = map_items(result)
     return animal_list
   end
+
+
+
 
 
 

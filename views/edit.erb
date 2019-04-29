@@ -43,28 +43,24 @@
     <!-- <label for = "vet_select" class="container_form_right"> Assigned Vet: </label><br> -->
 
     <div>
-    <label for="vet_select">Select Vet:</label>
+      <label for="vet_select">Select Vet:</label>
       <select name="assigned_vet" id="vet_select" selected="<%= @animal.assigned_vet %>">
         <% @staff.each do |vet| %>
-          <% if vet.id == @animal.assigned_vet %>
-            <option value=<%= vet.id %> selected><%= vet.first_name.capitalize %></option>
-          <% else %>
-            <option value=<%= vet.id %>><%= vet.first_name.capitalize %></option>
-          <% end %>
+        <% if vet.id == @animal.assigned_vet %>
+        <option value=<%= vet.id %> selected><%= vet.first_name.capitalize %></option>
+        <% else %>
+        <option value=<%= vet.id %>><%= vet.first_name.capitalize %></option>
+        <% end %>
         <% end %>
       </select>
     </div>
 
 
-
-  <input  class = "container_form_left" type="submit" value="update records"/>
-  <br>
-  <br>
-  <br>
-  <br>
-  <input type="submit" value="delete from records"/>
-  <form action="/vet-surgery/animals/<%= @animal.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
-
-
-  </form>
-</div>
+    <div class = "container_form_left">
+      <input  type="submit" value="update records"/>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
