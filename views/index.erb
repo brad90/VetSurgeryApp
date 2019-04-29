@@ -1,7 +1,7 @@
 
 
 
-  <div class="flex-container flex-container_end"><a class="flex-item" href="/vet-surgery/new">
+  <div class="flex-container flex-container_end"><a class="flex-item" href="/vet-surgery/animals/new">
     <h4> Add new pet+</h4>
   </a></div>
 
@@ -20,7 +20,7 @@
       <td class="table_data"><%= animal.name%></td>
       <td class="table_data"><%= animal.type_of_animal%></td>
       <td class="table_data"><%= animal.owner_name%></td>
-      <td class=" table_data table_data_extra"><a href="/vet-surgery/<%= animal.id %>">Show Details</a></td>
+      <td class=" table_data table_data_extra"><a href="/vet-surgery/animals/<%= animal.id %>">Show Details</a></td>
     </tr>
   </table>
   <%end%>

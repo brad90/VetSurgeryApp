@@ -44,16 +44,21 @@
     <!-- <label for = "treatment_notes" class="container_form_left" >Treatment_notes:</label><br> -->
     <!-- <label for = "vet_select" class="container_form_right"> Assigned Vet: </label><br> -->
     <h3 class="form_header"> Assigned Vet </h3>
-    <div class="custom_select">
-    <select name="assigned_vet" id="vet_select" class="container_form_left">
-      <% @staff.each do|individual| %>
-      <option value= <%= individual.id %> ><%= individual.first_name %></option>
-      <% end %>
-    </select>
-  </div>
+    <div class="container_form_left">
+      <select name="assigned_vet" id="vet_select" >
+        <% @staff.each do|individual| %>
+        <option value= <%= individual.id %> ><%= individual.first_name %></option>
+        <% end %>
+      </select>
+    </div>
 
+    <div class="container_form_left">
+      <input placeholder="Treatment Notes" type="text" name="treatment_notes"  id="text_box">
+    </div>
 
-    <input type="submit" value="save puppy"/>
+    <div class="container_form_left">
+      <input  class = "container_form_left" type="submit" value="Add New Animal"/>
+    </div>
 
   </form>
 </div>

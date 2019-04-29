@@ -1,4 +1,4 @@
-<div  class="flex-container"><a id="name"  href="/vet-surgery/new">
+<div  class="flex-container"><a id="name"  href="/vet-surgery/animals/new">
   <h1><%= @animal.name %></h1>
 </a></div>
 
@@ -28,8 +28,8 @@
 </div>
 
 <div class="grid_template_2">
-<div class="container_form_left"><a class="flex-item" href="/vet-surgery/<%= @animal.id %>/edit"><h4>Update animal info<a/></h4>
+<div class="container_form_left"><a class="flex-item" href="/vet-surgery/animals/<%= @animal.id %>/edit"><h4>Update animal info<a/></h4>
 </div>
 
-<div class="container_form_left"><form  action="/vet-surgery/<%= @animal.id %>/delete" method="POST"><input class="flex-item" type="submit" value="Delete from records"></form>
+<div class="container_form_left"><form  action="/vet-surgery/animals/<%= @animal.id %>/delete" method="POST"><input class="flex-item" type="submit" value="Delete from records"></form>
 </div>
