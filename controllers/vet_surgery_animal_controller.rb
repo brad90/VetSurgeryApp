@@ -32,6 +32,7 @@ end
 
 
 
+
 #Animal Update info
 get '/animals/:id/edit' do
   @staff = Staff.all
@@ -62,5 +63,11 @@ end
 post '/animals/:id/delete' do
   animal = Animal.new(params)
   animal.delete
+  redirect to "/animals"
+end
+
+post '/animals/:id/check_out' do
+  animals = Animal.new(params)
+  animals.check_out
   redirect to "/animals"
 end

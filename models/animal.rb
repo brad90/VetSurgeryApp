@@ -78,11 +78,6 @@ class Animal
     return visit.check_in
   end
 
-
-
-
-
-
   def self.count()
     sql = "SELECT COUNT(*) FROM animals"
     result = SqlRunner.run(sql)[0]['count']
@@ -122,6 +117,12 @@ class Animal
     results = SqlRunner.run(sql)
     animal_check_out = results.map{|animal| Animal.new(animal)}
     return animal_check_out
+  end
+
+  def check_out
+    sql = "UPDATE visits SET check_out = 1 WHERE animal_id = $1"
+    values = [@id]
+    SqlRunner.run(sql,values)
   end
 
 
