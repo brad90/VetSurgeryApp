@@ -58,7 +58,7 @@ class Visit
     SqlRunner.run(sql, values)
   end
 
-  def animal_name
+  def return_animal_name
     sql = "SELECT * FROM animals
             WHERE id = $1"
     values = [@animal_id]
@@ -66,6 +66,8 @@ class Visit
     animal = results.map{|animal| Animal.new(animal)}.first
     return animal.name
   end
+
+
 
 
   def self.find(id)

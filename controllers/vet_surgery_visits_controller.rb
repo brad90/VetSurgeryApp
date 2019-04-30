@@ -20,7 +20,6 @@ end
 
 #Staff save new booking
 post '/visits' do
-
   @visits = Visit.new(params)
   @visits.save()
   redirect to '/visits'
@@ -30,6 +29,12 @@ end
 get '/visits/:id/edit' do
   @visit = Visit.find(params[:id])
 erb(:'visits/edit')
+end
+
+#Show only one vets information in the vets
+get '/visits/:id/edit_treatment_notes' do
+  @visit = Visit.find(params[:id])
+erb(:'visits/edit_treatment_notes')
 end
 
 #Show only one vets information in the vets
