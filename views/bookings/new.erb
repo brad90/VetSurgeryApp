@@ -7,15 +7,17 @@
 
     <div class="container_form_left">
 
-      <select name="assigned_vet" id="vet_select" >
+      <select name="animal_id" id="vet_select" >
         <% @animals.each do|animal| %>
         <option value= <%= animal.id %>><%= animal.name%></option>
         <% end %>
       </select>
 
+
+
       <label for="start">Start date:</label>
 
-      <input type="date" id="start" name="trip-start"
+      <input type="date" id="start" name="check_in"
        value="2018-07-22"
        min="2018-01-01" max="2018-12-31">
 

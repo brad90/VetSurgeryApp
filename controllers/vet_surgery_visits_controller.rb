@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/animal')
 require_relative('../models/staff')
+require_relative('../models/visit')
 also_reload('./models/*')
 require( 'pry-byebug' )
 
@@ -19,6 +20,7 @@ end
 
 #Staff save new booking
 post '/visits' do
+
   @visits = Visit.new(params)
   @visits.save()
   redirect to '/visits'
