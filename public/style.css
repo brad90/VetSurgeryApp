@@ -1,32 +1,4 @@
 
-body {
-  background-color: #EFEFEF;
-  padding: 2% 17% 10% 17%;
-}
-
-h1, h2, h3, h4, h5, p{
-  font-family: 'Roboto', sans-serif;
-  line-height: 0.5;
-}
-
-h4{
-  font-size: 18px;
-}
-
-a{
-  text-decoration:none;
-  color:#1D1D1D
-}
-a:visited{
-  color:#1D1D1D
-}
-
-label{
-  font-family: 'Roboto', sans-serif;
-  font-weight: lighter;
-  color: #B4B2B2;
-}
-
 /* input:focus, textarea:focus, select:focus{
   outline: none;}
   input, textarea{
@@ -68,43 +40,6 @@ label{
     font-weight: 100;
   } */
 
-  li{
-    text-decoration: none;
-    display: inline-block;
-    margin:2%;
-    font-family: 'Roboto', sans-serif;
-    color:#1D1D1D;
-    float:right;
-  }
-
-  li:hover{
-    cursor: pointer;
-    border-bottom:3px solid #FFD700;
-  }
-
-  li:active{
-    border-bottom:4px solid black;
-  }
-
-  li:visited{
-    color:#1D1D1D
-  }
-
-  table,td {
-    border-bottom:10px solid #e3e3e3;
-    border-collapse: collapse;
-    height: 15px;
-    width:100%;
-  }
-
-  th{
-    font-weight: 400;
-    font-size: 18px;
-  }
-
-  br{
-    height: 5px;
-  }
 
   .page_menu {
     display: grid;
@@ -201,19 +136,6 @@ label{
     color: black;
     font-size: 16px;
     font-weight: lighter;
-  }
-
-
-  .flex-item3 {
-    padding: 0;
-    width:100%;
-    height: auto;
-
-
-    line-height:10px;
-    color: black;
-    font-size: 16px;
-    font-weight:lighter;
   }
 
   .button_font{
@@ -323,43 +245,6 @@ label{
 
 
 
-  .table_data{
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    text-align: left;
-
-    padding:2%;
-    width:150px;
-    background-color: white;
-    border-right: 1px solid grey;
-  }
-
-  .table_data_header{
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: left;
-
-    width:150px;
-    padding:2%;
-    background-color: white;
-    border-right: 1px solid grey;
-  }
-
-  .table_data_extra{
-    border-right: 0px solid white;
-    background-color:white;
-    text-decoration: underline;
-  }
-
-  .table_data_extra_header{
-    border-right: 0px solid white;
-    background-color:white;
-  }
-
-  .table_row{
-    background-color: white;
-  }
 
   .body_header{
     float:left;

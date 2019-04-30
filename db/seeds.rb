@@ -98,7 +98,7 @@ visit4 = Visit.new({
   })
 
   visit5 = Visit.new({
-    'animal_id' => animal3.id,
+    'animal_id' => animal4.id,
     'check_in' => '12/06/14',
     'check_out' => 'sffgdf ',
     'treatment_notes' => 'The dog swallowed a lego brick'

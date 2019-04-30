@@ -1,6 +1,8 @@
-<div  class="flex-container"><a id="name"  href="/vet-surgery/staff/new">
-  <h1><%= @staff.first_name %> <%= @staff.last_name %></h1>
-</a></div>
+<div  class="flex-container">
+  <a id="name" href="/vet-surgery/staff/new">
+  <h1><%= @staff.first_name.capitalize %> <%= @staff.last_name.capitalize%></h1>
+  </a>
+</div>
 
 <table class="table">
   <tr class="table_row">
@@ -12,23 +14,35 @@
 </table>
 
 <% @animals.each do |animal| %>
-  <% if animal.assigned_vet.to_i == @staff.id %>
-  <table class="table">
-    <tr class="table_row">
-      <td class="table_data"><%= animal.name%></td>
-      <td class="table_data"><%= animal.type_of_animal%></td>
-      <td class="table_data"><%= animal.owner_name%></td>
-      <td class=" table_data table_data_extra"><a href="/vet-surgery/animals/<%= animal.id %>">Show Details</a></td>
-    </tr>
-  </table>
+<% if animal.assigned_vet.to_i == @staff.id %>
+<table class="table">
+  <tr class="table_row">
+    <td class="table_data"><%= animal.name.capitalize%></td>
+    <td class="table_data"><%= animal.type_of_animal.capitalize%></td>
+    <td class="table_data"><%= animal.owner_name.capitalize%></td>
+    <td class=" table_data table_data_extra"><a href="/vet-surgery/animals/<%= animal.id %>">Show Details</a></td>
+  </tr>
+</table>
 
-  <%end%>
-  <%end%>
-  <br>
+<%end%>
+<%end%>
+<br>
 
-  <div class="grid_template_2">
-    <div class="container_form_left"><a class="flex-item" href="/vet-surgery/staff/<%=@staff.id%>/edit"><h4>Update Staff Info<a/></h4>
+<div class="flex-container">
+
+  <div class="margin_right">
+    <button class="button">
+      <a class="flex-item" href="/vet-surgery/staff/<%=@staff.id%>/edit">
+        Update Staff Info
+        <a/>
+      </button>
     </div>
 
-    <div class="container_form_left"><form action="/vet-surgery/staff/<%= @staff.id %>/delete" method="POST"><input class="flex-item" type="submit" value="Delete from records"/></form>
+    <div>
+      <br>
+      <form action="/vet-surgery/staff/<%= @staff.id %>/delete" method="POST">
+        <input class="flex-item" type="submit" value="Delete from records"/>
+      </form>
     </div>
+
+  </div>

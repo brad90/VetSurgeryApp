@@ -1,7 +1,7 @@
 
 
 <div  class="flex-container "><a id="name"  href="/vet-surgery/animals/new">
-  <h1 class="padding_left"><%= @animal.name%></h1>
+  <h1 class="padding_left"><%= @animal.name.capitalize%></h1>
 </a></div>
 
 <div class="flex-container flex-container_spacing margin_top ">
@@ -10,34 +10,21 @@
     <h2>Animal information:</h2>
     <br>
     <h3 class=" flex-item3"><strong>D.O.B:</strong>  <%= @animal.dob %></h3>
-    <h3 class=" flex-item3"><strong> Species:</strong> <%= @animal.type_of_animal %></h3>
+    <h3 class=" flex-item3"><strong> Species:</strong> <%= @animal.type_of_animal.capitalize %></h3>
   </div>
 
   <div class="show_info2 ">
     <h2>Owner information:</h2>
     <br>
-    <h3 class=" flex-item3"><strong>Owner name: </strong>     <%= @animal.owner_name%></h3>
+    <h3 class=" flex-item3"><strong>Owner name: </strong>     <%= @animal.owner_name.capitalize%></h3>
     <h3 class=" flex-item3 "><strong>Owner e-mail:</strong>  <%= @animal.owner_email %></h3>
     <h3 class=" flex-item3"> <strong>Owner phone number:</strong>  <%= @animal.owner_phone_number %></h3>
   </div>
 
 </div>
 
-<div class="flex-container flex-container_end">
-
-  <h2 class="padding_right_50">Treatement Notes:</h2>
-
-  <div class="flex-item5 margin_right">
-    <button class="button"><a href="/vet-surgery/animals/<%= @animal.id %>/edit">Update Animal</a></button>
-  </div>
-
-  <div>
-    <br>
-    <form action="/vet-surgery/animals/<%=@animal.id %>/delete" method="POST">
-      <div><input type="submit" value="Delete Animal" id="button_show"/></div>
-    </form>
-  </div>
-
+<div class="flex-container" id="TN">
+  <h2 class="padding_right_200">Treatement Notes:</h2>
 </div>
 
 <div class="flex-container flex-container_end">
@@ -46,3 +33,16 @@
     <%= visit.check_in%> : <%=visit.treatment_notes %></h3>
     <% end %>
   </div>
+
+<div class="flex-container flex-container_end">
+  <div class="margin_right ">
+    <button class="button margin_button" id="button_show><a href="/vet-surgery/animals/<%= @animal.id %>/edit">Update Animal</a></button>
+  </div>
+
+  <div>
+    <br>
+    <form action="/vet-surgery/animals/<%=@animal.id %>/delete" method="POST">
+      <div><input type="submit" value="Delete Animal" id="button_show"/></div>
+    </form>
+  </div>
+</div>

@@ -16,6 +16,9 @@ class Animal
     @owner_email = options['owner_email']
     @owner_phone_number = options['owner_phone_number']
     @assigned_vet = options['assigned_vet']
+    # @treatment_notes = options['treatment_notes']
+    # @check_in = options['check_in']
+    # @check_out = options['check_out']
   end
 
 
@@ -117,6 +120,22 @@ class Animal
     animal_list = map_items(result)
     return animal_list
   end
+
+
+  # def add_visit
+  #   sql = "INSERT INTO visits(
+  #   animal_id,
+  #   check_in,
+  #   check_out,
+  #   treatment_notes
+  #   )VALUES(
+  #   $1,
+  #   $2,
+  #   $3,
+  #   $4
+  #   )"
+  #   value =[@id, @]
+  # end
 
 
 
