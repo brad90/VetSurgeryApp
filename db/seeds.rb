@@ -111,9 +111,6 @@ visit4.save
 visit5.save
 
 
-Visit.all
-
-
 
 
 

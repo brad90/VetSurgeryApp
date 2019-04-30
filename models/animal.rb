@@ -16,6 +16,7 @@ class Animal
     @owner_email = options['owner_email']
     @owner_phone_number = options['owner_phone_number']
     @assigned_vet = options['assigned_vet']
+    @check_in = 
   end
 
 

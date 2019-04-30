@@ -39,7 +39,7 @@ end
 #Staff save updates
 post'/staffs/:id' do
   @staff = Staff.new(params)
-  staff.update
+  @staff.update
   redirect to "/staffs"
 end
 

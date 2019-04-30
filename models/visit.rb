@@ -86,4 +86,14 @@ class Visit
     return visit_list
   end
 
+  def animal_name
+    sql = "SELECT * FROM animals
+            WHERE id = $1"
+    values = [@animal_id]
+    results = SqlRunner.run(sql,values)
+    animal = results.map{|animal| Animal.new(animal)}
+    binding.pry
+    return animal
+  end
+
 end
