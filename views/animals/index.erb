@@ -3,7 +3,7 @@
 <div class="grid-container">
   <div class="item1"><h3 id="index_head_font">Current Animals in Surgery:</h3></div>
   <div class="item2"><a href="/visits"><h4 class="button">Show Bookings</h4></a></div>
-  <div class="item3"><a  href="animals/new"><h4 class="button ">Add new pet+</h4></a></div>
+  <div class="item3"><a  href="animals/new"><h4 class="button ">Register new pet+</h4></a></div>
 </div>
 
 
@@ -19,8 +19,8 @@
 
 
 
-  <% @animals.each do |animal| %>
-  <% if animal.checked_out == '0'%>
+<% @animals.each do |animal| %>
+<% if animal.checked_out == '0'%>
 <table class="table">
   <tr class="table_row">
     <td class="table_data"><%= animal.name%></td>

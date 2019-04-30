@@ -95,4 +95,13 @@ class Visit
     return animal.name
   end
 
+  def date_after_today
+    sql = "SELECT * FROM visits"
+    results = SqlRunner.run(sql)
+    visits = results.map{|visit| Visit.new(visit)}
+
+  end
+
+
+
 end

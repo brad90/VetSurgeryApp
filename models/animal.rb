@@ -133,6 +133,14 @@ class Animal
     return visits.check_out
   end
 
+  def upcoming_bokings
+    sql = "SELECT * FROM visits WHERE check_in >= '2018-07-19' ORDER BY check_in DESC LIMIT 1"
+    values = [@id]
+    result = SqlRunner.run(sql,values)
+    visits = result.map{|data| Visit.new(data)}.first
+    return visits.check_out
+  end
+
 
 
 
