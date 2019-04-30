@@ -1,10 +1,10 @@
 DROP TABLE visits;
 DROP TABLE animals;
-DROP TABLE staff;
+DROP TABLE staffs;
 
 
 
-CREATE TABlE staff(
+CREATE TABlE staffs(
   id SERIAL8 PRIMARY KEY,
   first_name VARCHAR(255),
   last_name VARCHAR(255)
@@ -18,10 +18,7 @@ CREATE TABLE animals(
   owner_name VARCHAR(255),
   owner_email VARCHAR(255),
   owner_phone_number VARCHAR(255),
-  assigned_vet INT4 REFERENCES staff(id) ON DELETE SET NULL,
-  treatment_notes TEXT,
-  check_in VARCHAR(255),
-  check_out VARCHAR(255)
+  assigned_vet INT4 REFERENCES staffs(id) ON DELETE SET NULL
 );
 
 CREATE TABLE visits(

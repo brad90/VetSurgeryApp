@@ -5,48 +5,50 @@ require_relative('../models/staff')
 also_reload('./models/*')
 
 #Staff Show all
-get'/vet-surgery/staff' do
+get'/staffs' do
   @staff = Staff.all()
-  erb(:staff_index)
+  erb(:'staffs/index')
 end
 
 #Staff create new staff
-get '/vet-surgery/staff/new_staff' do
-  erb(:new_staff)
+get '/staffs/new' do
+  erb(:'staffs/new')
 end
 
 #Staff save new staff
-post '/vet-surgery/staff' do
+post '/staffs' do
   @staff = Staff.new(params)
   @staff.save()
-  redirect to '/vet-surgery/staff'
+  redirect to '/staffs'
 end
 
 #Show only one vets information in the vets
-get '/vet-surgery/staff/:id' do
+get '/staffs/:id/edit' do
   @staff = Staff.find(params[:id])
   @animals = Animal.all()
-erb(:show_staff)
+erb(:'staffs/edit')
 end
 
 #Show only one vets information in the vets
-get '/vet-surgery/staff/:id/edit' do
+get '/staffs/:id' do
   @staff = Staff.find(params[:id])
   @animals = Animal.all()
-erb(:update_staff)
+erb(:'staffs/show')
 end
+
+
 
 #Staff save updates
-post '/vet-surgery/staff/:id' do
-  staff = Staff.new(params)
+post '/staffs/:id' do
+  @staff = Staff.new(params)
   staff.update
-  redirect to "/vet-surgery/staff/#{params[:id]}"
+  redirect to "/staffs/#{params[:id]}"
 end
 
 #Delete Staff
 
-post '/vet-surgery/staff/:id/delete' do
-  staff = Staff.find(params['id'])
+post '/:id/delete' do
+  staff = Staff.new(params[:id])
   staff.delete()
-  redirect to '/vet-surgery/staff'
+  redirect to '/staffs'
 end

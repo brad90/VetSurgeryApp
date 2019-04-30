@@ -27,10 +27,7 @@ animal1 = Animal.new({
   'owner_name' =>'Mrs Alison Bradley',
   'owner_email' => 'alison.bradley@gmail.com',
   'owner_phone_number'=>'07903080152',
-  'assigned_vet' => vet1.id,
-  'treatment_notes'=> 'This dog is loves Dolly Parton',
-  'check_in' => '2019-07-22',
-  'check_out' => 'idfhskjhf'
+  'assigned_vet' => vet1.id
   })
 
 animal2 = Animal.new({
@@ -40,10 +37,7 @@ animal2 = Animal.new({
   'owner_name' =>'Mr Bob Smith',
   'owner_email' => 'bob.smith@gmail.com',
   'owner_phone_number'=>'4291',
-  'assigned_vet' => vet1.id,
-  'treatment_notes'=> 'This dog is loves Dolly Parton',
-  'check_in' => '1232142ou19',
-  'check_out' => 'idfhskjhf'
+  'assigned_vet' => vet1.id
   })
 
 animal3 = Animal.new({
@@ -53,10 +47,7 @@ animal3 = Animal.new({
   'owner_name' =>'Mrs Sandra Bulloch',
   'owner_email' => 'sandra90@gmail.com',
   'owner_phone_number'=>'07903080152',
-  'assigned_vet' => vet2.id,
-  'treatment_notes'=> 'This dog is loves Dolly Parton',
-  'check_in' => '1232142ou19',
-  'check_out' => 'idfhskjhf'
+  'assigned_vet' => vet2.id
   })
 
   animal4 = Animal.new({
@@ -66,10 +57,7 @@ animal3 = Animal.new({
     'owner_name' =>'Mrs Sandra Bulloch',
     'owner_email' => 'sandra90@gmail.com',
     'owner_phone_number'=>'07903080152',
-    'assigned_vet' => vet2.id,
-    'treatment_notes'=> 'This dog is loves Dolly Parton',
-    'check_in' => '1232142ou19',
-    'check_out' => ''
+    'assigned_vet' => vet2.id
     })
 
 

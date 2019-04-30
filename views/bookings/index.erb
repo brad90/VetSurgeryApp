@@ -1,0 +1,18 @@
+<table class="table">
+  <tr class="table_row">
+    <th class="table_data_header">Animal Name</th>
+    <th class="table_data_header">Animal Type</th>
+    <th class="table_data_header">Owner Name</th>
+    <th class="table_data_header table_data_extra_header">Details</th>
+  </tr>
+</table>
+
+  <% @visits.each do |visit| %>
+<table class="table">
+  <tr class="table_row">
+    <td class="table_data"><%= visit.animal_id%></td>
+    <td class="table_data"><%= visit.check_in %></td>
+    <td class=" table_data table_data_extra"><a href="/vet-surgery/animals/visits<%= visit.id %>">Show Details</a></td>
+  </tr>
+</table>
+<%end%>

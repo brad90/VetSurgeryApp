@@ -17,7 +17,7 @@ class Staff
 
 
   def save()
-    sql ="INSERT INTO staff
+    sql ="INSERT INTO staffs
     (
     first_name,
     last_name
@@ -33,25 +33,25 @@ class Staff
     end
 
     def update
-      sql = "UPDATE staff SET (first_name,last_name)
+      sql = "UPDATE staffs SET (first_name,last_name)
       = ($1, $2) WHERE id = $3"
       values = [@first_name, @last_name, @id]
       SqlRunner.run(sql,values)
     end
 
     def delete()
-      sql = "DELETE FROM staff WHERE id = $1"
+      sql = "DELETE FROM staffs WHERE id = $1"
       values = [@id]
       SqlRunner.run(sql, values)
     end
 
     def self.delete_all()
-      sql = "DELETE FROM staff"
+      sql = "DELETE FROM staffs"
       SqlRunner.run(sql)
     end
 
     def self.find(id)
-      sql = "SELECT * FROM staff WHERE id = $1"
+      sql = "SELECT * FROM staffs WHERE id = $1"
       values = [id]
       result = SqlRunner.run(sql, values).first
       animal = Staff.new(result)
@@ -63,7 +63,7 @@ class Staff
     end
 
     def self.all()
-      sql = "SELECT * FROM staff"
+      sql = "SELECT * FROM staffs"
       result = SqlRunner.run(sql)
       staff_list = map_items(result)
       return staff_list

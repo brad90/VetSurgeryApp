@@ -2,7 +2,7 @@
 
 <div>
 
-  <form method="post" action="/vet-surgery/animals" class="container_form">
+  <form method="post" action="/animals" class="container_form">
     <h1 class="padding_bottom"> Register a New Animal </h1>
     <br>
     <br>
@@ -38,19 +38,7 @@
         <option value= <%= individual.id %> ><%= individual.first_name %></option>
         <% end %>
       </select>
-      <br>
-      <br>
-      <div><input placeholder="Treatment Notes" type="text" name="treatment_notes"  class="textarea container_form_right" ></div>
-      <br>
 
-      <label for="start">Check-in Date</label>
-
-      <input type="date" id="start" name="check_in"
-       value="2019-07-22"
-       min="2019-01-01" max="2019-12-31">
-
-       <br>
-       <br>
 
       <div><input type="submit" value="Add New Animal"/></div>
 

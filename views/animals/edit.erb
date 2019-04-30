@@ -1,18 +1,18 @@
 
 <h2>Edit <%= @animal.name %></h2>
 <div>
-  <form method="POST" action="/vet-surgery/animals/<%= @animal.id %>" class="container_form">
+  <form method="POST" action="/animals/<%=@animal.id%>" class="container_form">
 
     <h3 class="form_header"> Animals Details </h3>
     <input type="text" name="name" class="container_form_left" value="<%= @animal.name %>"/>
-    <!-- <label for = "animal_dob" class="container_form_right">Animal D.O.B: </label> -->
+
     <input type="text" name="dob" id="animal_dob" class="container_form_right" value="<%= @animal.dob %>"/>
     <br>
     <br>
-    <!-- <label for = "animal_species" class="container_form_left">Animal species: > -->
+
     <input type="text" name="type_of_animal" id="animal_species" class="container_form_left" value="<%= @animal.type_of_animal %>">
 
-    <!-- <label for = "owner_name" class="container_form_right" >Owners name: </label><br> -->
+
     <br>
     <br>
     <br>
@@ -22,25 +22,15 @@
 
     <h3 class="form_header"> Owners Details </h3>
     <input type="text" name="owner_name" class="container_form_left" value="<%= @animal.owner_name %>"/>
-    <!-- <label for = "animal_dob" class="container_form_right">Animal D.O.B: </label> -->
+
     <input type="text" name="owner_email"  class="container_form_right" value="<%= @animal.owner_email%>"/>
     <br>
     <br>
-    <!-- <label for = "animal_species" class="container_form_left">Animal species: > -->
     <input type="text" name="owner_phone_number" id="animal_species" class="container_form_left" value="<%= @animal.owner_phone_number %>"/>
 
     <br>
     <br>
 
-    <!-- <label for = "owner_email" class="container_form_left">Owners email:</label><br> -->
-    <!-- <input  type="text" name="owner_email" id="owner_email" class="container_form_right"> -->
-
-    <!-- <label for = "owner_number" class="container_form_right">Owners_number: </label><br> -->
-    <!-- <input placeholder="Owners phone number" type="text" name="owner_number" id="owner_number" class="container_form_left"> -->
-    <br>
-    <br>
-    <!-- <label for = "treatment_notes" class="container_form_left" >Treatment_notes:</label><br> -->
-    <!-- <label for = "vet_select" class="container_form_right"> Assigned Vet: </label><br> -->
 
     <div>
       <label for="vet_select">Select Vet:</label>

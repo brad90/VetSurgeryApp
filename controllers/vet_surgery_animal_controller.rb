@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/animal')
 require_relative('../models/staff')
+require_relative('../models/visit')
 also_reload('./models/*')
 require( 'pry-byebug' )
 
@@ -10,55 +11,56 @@ require( 'pry-byebug' )
 #Animal CRUD
 
 #Show me all the animals
-get'/vet-surgery/animals'do
+get'/animals'do
   @animals = Animal.all
-erb(:index)
+  @visits = Visit.all
+erb(:'animals/index')
 end
 
 #Animal Create new animal
-get '/vet-surgery/animals/new' do
+get '/animals/new' do
   @staff = Staff.all()
-  erb(:new)
+  erb(:'animals/new')
 end
 
 #Save new animal
-post '/vet-surgery/animals' do
+post '/animals' do
   @animals = Animal.new(params)
   @animals.save()
-  @animals.add_visit
-  redirect to '/vet-surgery/animals'
+  redirect to '/animals'
 end
+
+
 
 #Animal Update info
-get '/vet-surgery/animals/:id/edit' do
+get '/animals/:id/edit' do
   @staff = Staff.all
-  @animal = Animal.find(params['id'])
-  erb(:edit)
+  @animal = Animal.find(params[:id])
+  erb(:'animals/edit')
 end
 
 #Animal show one animal
-get '/vet-surgery/animals/:id' do
-  @animal = Animal.find(params['id'])
-
+get '/animals/:id' do
+  @animal = Animal.find(params[:id])
   @animal_visits = @animal.visits
-erb(:show)
+erb(:'animals/show')
 end
 
 #Animal show one animal
-get '/vet-surgery/animals/find' do
-erb(:find_existing)
+get '/animals/find' do
+erb(:'animals/find_existing')
 end
 
 #Animal save updates
-post '/vet-surgery/animals/:id' do
+post '/animals/:id' do
   animal = Animal.new(params)
   animal.update
-  redirect to "/vet-surgery/animals/#{params['id']}"
+  redirect to "/animals"
 end
 
 #Animal save updates
-post '/vet-surgery/animals/:id/delete' do
+post '/animals/:id/delete' do
   animal = Animal.new(params)
   animal.delete
-  redirect to "/vet-surgery/animals"
+  redirect to "/animals"
 end

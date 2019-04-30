@@ -1,5 +1,5 @@
 <div  class="flex-container">
-  <a id="name" href="/vet-surgery/staff/new">
+  <a id="name" href="/staffs/new">
   <h1><%= @staff.first_name.capitalize %> <%= @staff.last_name.capitalize%></h1>
   </a>
 </div>
@@ -20,7 +20,7 @@
     <td class="table_data"><%= animal.name.capitalize%></td>
     <td class="table_data"><%= animal.type_of_animal.capitalize%></td>
     <td class="table_data"><%= animal.owner_name.capitalize%></td>
-    <td class=" table_data table_data_extra"><a href="/vet-surgery/animals/<%= animal.id %>">Show Details</a></td>
+    <td class=" table_data table_data_extra"><a href="/animals/<%= animal.id %>">Show Details</a></td>
   </tr>
 </table>
 
@@ -32,15 +32,15 @@
 
   <div class="margin_right">
     <button class="button">
-      <a class="flex-item" href="/vet-surgery/staff/<%=@staff.id%>/edit">
+      <a class="flex-item" href="staffs/<%=@staff.id%>/edit">
         Update Staff Info
-        <a/>
+      </a>
       </button>
     </div>
 
     <div>
       <br>
-      <form action="/vet-surgery/staff/<%= @staff.id %>/delete" method="POST">
+      <form action= "staffs/<%= @staff.id %>/delete" method="POST">
         <input class="flex-item" type="submit" value="Delete from records"/>
       </form>
     </div>

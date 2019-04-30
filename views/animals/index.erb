@@ -2,8 +2,8 @@
 
 <div class="grid-container">
   <div class="item1"><h3 id="index_head_font">Current Animals in Surgery:</h3></div>
-  <div class="item2"><a href="/vet-surgery/animals/new"><h4 class="button "> Find exisitng pet+</h4></a></div>
-  <div class="item3"><a  href="/vet-surgery/animals/new"><h4 class="button "> Add new pet+</h4></a></div>
+  <div class="item2"><a href="animals/new"><h4 class="button "> Find exisitng pet+</h4></a></div>
+  <div class="item3"><a  href="animals/new"><h4 class="button ">Add new pet+</h4></a></div>
 </div>
 
 
@@ -18,16 +18,21 @@
 </table>
 
   <% @animals.each do |animal| %>
-  <% if animal.check_out? != true %>
 <table class="table">
   <tr class="table_row">
     <td class="table_data"><%= animal.name%></td>
     <td class="table_data"><%= animal.type_of_animal%></td>
     <td class="table_data"><%= animal.owner_name%></td>
-    <td class="table_data"><%= animal.check_in %></td>
-    <td class=" table_data table_data_extra"><a href="/vet-surgery/animals/<%= animal.id %>">Show Details</a></td>
+    <td class="table_data"><%= animal.name %></td>
+    <td class=" table_data table_data_extra"><a href="animals/<%= animal.id %>">Show Details</a></td>
   </tr>
 
 </table>
 <%end%>
-<%end%>
+<br>
+<br>
+<br>
+<div class="grid-container">
+  <div class="item1"><h3 id="index_head_font">Bookings for the week:</h3></div>
+  <div class="item2"><a href="animals/new"><h4 class="button">New Booking</h4></a></div>
+</div>

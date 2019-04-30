@@ -7,7 +7,7 @@ class Visit
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @animal_id = options['animal_id'].to_i
+    @animal_id = options['animal_id']
     @check_in = options['check_in']
     @check_out = options['check_out']
     @treatment_notes = options['treatment_notes']
