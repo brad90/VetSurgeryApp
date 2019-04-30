@@ -17,7 +17,10 @@
   </tr>
 </table>
 
+
+
   <% @animals.each do |animal| %>
+  <% if animal.checked_out? == 0 %>
 <table class="table">
   <tr class="table_row">
     <td class="table_data"><%= animal.name%></td>
@@ -26,8 +29,8 @@
     <td class="table_data"><%= animal.name %></td>
     <td class=" table_data table_data_extra"><a href="animals/<%= animal.id %>">Show Details</a></td>
   </tr>
-
 </table>
+<%end%>
 <%end%>
 <br>
 <br>
