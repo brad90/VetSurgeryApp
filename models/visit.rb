@@ -91,9 +91,8 @@ class Visit
             WHERE id = $1"
     values = [@animal_id]
     results = SqlRunner.run(sql,values)
-    animal = results.map{|animal| Animal.new(animal)}
-    binding.pry
-    return animal
+    animal = results.map{|animal| Animal.new(animal)}.first
+    return animal.name
   end
 
 end
