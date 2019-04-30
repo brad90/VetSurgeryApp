@@ -69,14 +69,29 @@ class Animal
     return visits
   end
 
-  def check_in
-    sql = "SELECT * FROM visits
-          WHERE animal_id = $1"
+  def returned_check_in_date
+    sql = "SELECT * FROM visits WHERE animal_id = $1 ORDER BY check_in DESC LIMIT 1"
     values=[@id]
     result = SqlRunner.run(sql, values)
-    visit = result.map { |data| Visit.new(data)}.first
+
+    visit = result.map {|data| Visit.new(data)}.first
     return visit.check_in
   end
+
+  def return_number_of_visits_to_vets
+    sql = "SELECT COUNT(*) FROM visits WHERE animal_id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)[0]['count']
+    return result
+  end
+
+  # def return_check_in_date
+  #   sql = "SELECT visits.check_in FROM visits WHERE animal_id = $1"
+  #   values = [@id]
+  #   results = SqlRunner.run(sql)
+  #   animal_check_out = results.map{|animal| Animal.new(animal)}
+  #   return animal_check_out
+  # end
 
   def self.count()
     sql = "SELECT COUNT(*) FROM animals"
@@ -106,17 +121,6 @@ class Animal
     result = SqlRunner.run(sql)
     animal_list = map_items(result)
     return animal_list
-  end
-
-
-
-
-  def check_in
-    sql = "SELECT visits.check_in FROM visits WHERE animal_id = $1"
-    values = [@id]
-    results = SqlRunner.run(sql)
-    animal_check_out = results.map{|animal| Animal.new(animal)}
-    return animal_check_out
   end
 
   def check_out

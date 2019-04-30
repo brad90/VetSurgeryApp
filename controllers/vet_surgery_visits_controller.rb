@@ -9,13 +9,13 @@ require( 'pry-byebug' )
 #Staff Show all
 get'/visits' do
   @visits = Visit.all()
-  erb(:'bookings/index')
+  erb(:'visits/index')
 end
 
 #Staff create new booking
 get '/visits/new' do
   @animals = Animal.all
-  erb(:'bookings/new')
+  erb(:'visits/new')
 end
 
 #Staff save new booking
@@ -29,14 +29,14 @@ end
 #Show only one vets information in the vets
 get '/visits/:id/edit' do
   @visit = Visit.find(params[:id])
-erb(:'bookings/edit')
+erb(:'visits/edit')
 end
 
 #Show only one vets information in the vets
 get '/visits/:id' do
   @visit = Visit.find(params[:id])
   @animals = Animal.all()
-erb(:'bookings/show')
+erb(:'visits/show')
 end
 
 #Staff save updates

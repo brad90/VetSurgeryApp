@@ -58,6 +58,15 @@ class Visit
     SqlRunner.run(sql, values)
   end
 
+  def animal_name
+    sql = "SELECT * FROM animals
+            WHERE id = $1"
+    values = [@animal_id]
+    results = SqlRunner.run(sql,values)
+    animal = results.map{|animal| Animal.new(animal)}.first
+    return animal.name
+  end
+
 
   def self.find(id)
     sql="SELECT * FROM visits WHERE id = $1"
@@ -86,21 +95,19 @@ class Visit
     return visit_list
   end
 
-  def animal_name
-    sql = "SELECT * FROM animals
-            WHERE id = $1"
-    values = [@animal_id]
-    results = SqlRunner.run(sql,values)
-    animal = results.map{|animal| Animal.new(animal)}.first
-    return animal.name
-  end
+  # def date_after_today
+  #   sql = "SELECT * FROM visits WHERE id = $1"
+  #   values = [@id]
+  #   results = SqlRunner.run(sql, values)
+  #   visits = results.map{|visit| Visit.new(visit)}.first
+  #   binding.pry
+  #   p true if visits.check_out < '2018-06-19'
+  #   p false
+  #   nil
+  #   nil
+  #   nil
+  # end
 
-  def date_after_today
-    sql = "SELECT * FROM visits"
-    results = SqlRunner.run(sql)
-    visits = results.map{|visit| Visit.new(visit)}
-
-  end
 
 
 

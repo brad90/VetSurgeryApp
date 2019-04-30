@@ -1,12 +1,7 @@
 
-<div class="flex_container">
-  <div><a href="/visits"><h4 class="button">Show Bookings</h4></a></div>
-  <div><a  href="animals/new"><h4 class="button">Register new pet+</h4></a></div>
-  <div><a  href="animals/registered-animals"><h4 class="button">Show Registered Pets</h4></a></div>
-</div>
-
 <div class="grid-container">
-  <div class="item1"><h3 id="index_head_font">Admitted Animals in Hopsital:</h3></div>
+  <div class="item1"><h3 id="index_head_font">Registered Animals:</h3></div>
+  <div><a  href="/animals/new"><h4 class="button">Register new pet+</h4></a></div>
 </div>
 
 
@@ -15,7 +10,7 @@
     <th class="table_data_header">Animal Name</th>
     <th class="table_data_header">Animal Type</th>
     <th class="table_data_header">Owner Name</th>
-    <th class="table_data_header">Check_in</th>
+    <th class="table_data_header">Number of Visits</th>
     <th class="table_data_header table_data_extra_header">Details</th>
   </tr>
 </table>
@@ -23,17 +18,15 @@
 
 
 <% @animals.each do |animal| %>
-<% if animal.check_out == '0'%>
 <table class="table">
   <tr class="table_row">
     <td class="table_data"><%= animal.name%></td>
     <td class="table_data"><%= animal.type_of_animal%></td>
     <td class="table_data"><%= animal.owner_name%></td>
-    <td class="table_data"><%= animal.name %></td>
+    <td class="table_data"><%= animal.return_number_of_visits_to_vets%></td>
     <td class=" table_data table_data_extra"><a href="/animals/<%= animal.id %>">Show Details</a></td>
   </tr>
 </table>
-<%end%>
 <%end%>
 <br>
 <br>

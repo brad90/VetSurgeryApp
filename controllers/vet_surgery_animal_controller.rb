@@ -17,6 +17,11 @@ get'/animals'do
 erb(:'animals/index')
 end
 
+get'/animals/registered-animals'do
+  @animals = Animal.all
+erb(:'animals/index_registered_animals')
+end
+
 #Animal Create new animal
 get '/animals/new' do
   @staff = Staff.all()
@@ -27,7 +32,7 @@ end
 post '/animals' do
   @animals = Animal.new(params)
   @animals.save()
-  redirect to '/animals'
+  redirect to '/animals/registered-animals'
 end
 
 
@@ -39,6 +44,7 @@ get '/animals/:id/edit' do
   @animal = Animal.find(params[:id])
   erb(:'animals/edit')
 end
+
 
 #Animal show one animal
 get '/animals/:id' do
@@ -56,14 +62,15 @@ end
 post '/animals/:id' do
   animal = Animal.new(params)
   animal.update
-  redirect to "/animals"
+  redirect to "/animals/registered-animals"
 end
 
-#Animal save updates
+
+#Animal delete
 post '/animals/:id/delete' do
   animal = Animal.new(params)
   animal.delete
-  redirect to "/animals"
+  redirect to "/animals/registered-animals"
 end
 
 post '/animals/:id/check_out' do
