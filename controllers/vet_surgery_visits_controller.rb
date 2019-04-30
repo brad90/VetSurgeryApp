@@ -11,16 +11,17 @@ get'/visits' do
   erb(:'bookings/index')
 end
 
-#Staff create new staff
+#Staff create new booking
 get '/visits/new' do
+  @animals = Animal.all
   erb(:'bookings/new')
 end
 
-#Staff save new staff
+#Staff save new booking
 post '/visits' do
   @visits = Visit.new(params)
   @visits.save()
-  redirect to '/staffs'
+  redirect to '/visits'
 end
 
 #Show only one vets information in the vets

@@ -16,8 +16,6 @@ class Animal
     @owner_email = options['owner_email']
     @owner_phone_number = options['owner_phone_number']
     @assigned_vet = options['assigned_vet']
-    @check_in = Time.new,
-    @check_out = Time.new
   end
 
 
@@ -119,7 +117,8 @@ class Animal
 
 
   def check_in
-    sql = " SELECT visits.check_in FROM visits WHERE check_out IS NULL"
+    sql = "SELECT visits.check_in FROM visits WHERE animal_id = $1"
+    values = [@id]
     results = SqlRunner.run(sql)
     animal_check_out = results.map{|animal| Animal.new(animal)}
     return animal_check_out

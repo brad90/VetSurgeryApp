@@ -1,0 +1,32 @@
+
+
+<div>
+
+  <form method="post" action="/visits" class="container_form">
+
+
+    <div class="container_form_left">
+
+      <select name="assigned_vet" id="vet_select" >
+        <% @animals.each do|animal| %>
+        <option value= <%= animal.id %>><%= animal.name %></option>
+        <% end %>
+      </select>
+
+      <label for="start">Start date:</label>
+
+      <input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31">
+
+       <div>
+         <input placeholder="Treatment Notes" type="text" name="treatment_notes"  id="text_box">
+       </div>
+
+
+      <div><input type="submit" value="Add New Animal"/></div>
+    </div>
+
+  </form>
+
+</div>

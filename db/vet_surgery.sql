@@ -24,7 +24,7 @@ CREATE TABLE animals(
 CREATE TABLE visits(
   id SERIAL8 PRIMARY KEY,
   animal_id INT4 REFERENCES animals(id) ON DELETE CASCADE,
-  check_in DATE,
-  check_out DATE,
+  check_in VARCHAR(255),
+  check_out VARCHAR(255),
   treatment_notes TEXT
 );
