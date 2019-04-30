@@ -16,7 +16,8 @@ class Animal
     @owner_email = options['owner_email']
     @owner_phone_number = options['owner_phone_number']
     @assigned_vet = options['assigned_vet']
-    @check_in = 
+    @check_in = Time.new,
+    @check_out = Time.new
   end
 
 
@@ -79,21 +80,7 @@ class Animal
     return visit.check_in
   end
 
-  # def add_visit
-  #   sql = "INSERT INTO visits(
-  #   animal_id,
-  #   check_in,
-  #   check_out,
-  #   treatment_notes
-  #   )VALUES(
-  #   $1,
-  #   $2,
-  #   $3,
-  #   $4
-  #   )"
-  #   values =[@id, @check_in, @treatment_notes]
-  #   SqlRunner.run(sql, values)
-  # end
+
 
 
 
@@ -131,12 +118,12 @@ class Animal
 
 
 
-  # def check_out?
-  #   sql = " SELECT * FROM animals WHERE check_out IS NULL"
-  #   results = SqlRunner.run(sql)
-  #   animal_check_out = results.map{|animal| Animal.new(animal)}
-  #   return animal_check_out
-  # end
+  def check_in
+    sql = " SELECT visits.check_in FROM visits WHERE check_out IS NULL"
+    results = SqlRunner.run(sql)
+    animal_check_out = results.map{|animal| Animal.new(animal)}
+    return animal_check_out
+  end
 
 
 
