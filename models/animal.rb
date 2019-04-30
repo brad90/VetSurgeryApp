@@ -130,8 +130,7 @@ class Animal
     values = [@id]
     result = SqlRunner.run(sql,values)
     visits = result.map{|data| Visit.new(data)}.first
-    return false if visits.check_out == '0'
-    return true
+    return visits.check_out
   end
 
 
