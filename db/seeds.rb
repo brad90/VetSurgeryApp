@@ -79,21 +79,21 @@ visit1 = Visit.new({
 visit2 = Visit.new({
   'animal_id' => animal2.id,
   'check_in' => '2018-07-19',
-  'check_out' => '0',
+  'check_out' => '1',
   'treatment_notes' => 'Dog is sick from cat flu'
   })
 
 visit3 = Visit.new({
   'animal_id' => animal3.id,
   'check_in' => '2018-07-19',
-  'check_out' => '2018-07-19',
+  'check_out' => '1',
   'treatment_notes' => 'Dog is sick from cat flu'
   })
 
 visit4 = Visit.new({
   'animal_id' => animal3.id,
   'check_in' => '2018-07-19',
-  'check_out' => '0',
+  'check_out' => '1',
   'treatment_notes' => 'The dog swallowed a lego brick'
   })
 

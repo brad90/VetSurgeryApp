@@ -128,10 +128,11 @@ class Animal
   def checked_out?
     sql = "SELECT * FROM visits WHERE animal_id = $1 ORDER BY check_in DESC LIMIT 1"
     values = [@id]
-    binding.pry
     result = SqlRunner.run(sql,values)
-    visits = result.map{|data| Visit.new(data)}
-    return visits[0]['check_out']
+    visits = result.map{|data| Visit.new(data)}.first
+    return false if visits.check_out == '0'
+    
+    return true
   end
 
 

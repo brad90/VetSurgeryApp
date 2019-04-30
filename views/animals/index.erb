@@ -20,7 +20,7 @@
 
 
   <% @animals.each do |animal| %>
-  <% if animal.checked_out? == 0 %>
+  <% if animal.checked_out? == false %>
 <table class="table">
   <tr class="table_row">
     <td class="table_data"><%= animal.name%></td>
