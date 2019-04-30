@@ -36,19 +36,17 @@ get '/staffs/:id' do
 erb(:'staffs/show')
 end
 
-
-
 #Staff save updates
-post '/staffs/:id' do
+post'/staffs/:id' do
   @staff = Staff.new(params)
   staff.update
-  redirect to "/staffs/#{params[:id]}"
+  redirect to "/staffs"
 end
 
 #Delete Staff
 
-post '/:id/delete' do
-  staff = Staff.new(params[:id])
+post '/staffs/:id/delete' do
+  staff = Staff.new(params)
   staff.delete()
   redirect to '/staffs'
 end

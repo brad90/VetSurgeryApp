@@ -32,7 +32,7 @@
 
   <div class="margin_right">
     <button class="button">
-      <a class="flex-item" href="staffs/<%=@staff.id%>/edit">
+      <a class="flex-item" href="/staffs/<%=@staff.id%>/edit">
         Update Staff Info
       </a>
       </button>
@@ -40,7 +40,7 @@
 
     <div>
       <br>
-      <form action= "staffs/<%= @staff.id %>/delete" method="POST">
+      <form action= "/staffs/<%= @staff.id %>/delete" method="POST">
         <input class="flex-item" type="submit" value="Delete from records"/>
       </form>
     </div>
