@@ -26,7 +26,7 @@
     <br>
     <br>
 
-    <input placeholder="Owners phone number" type="text" name="owner_number" id="animal_species" class="container_form_left">
+    <input placeholder="Owners phone number" type="text" name="owner_phone_number" id="animal_species" class="container_form_left">
     <br>
     <br>
     <h3 class="padding_top"> Assigned Vet </h3>
@@ -40,9 +40,22 @@
       </select>
       <br>
       <br>
-      <div ><input placeholder="Treatment Notes" type="text" name="treatment_notes"  class="textarea container_form_right" ></div>
+      <div><input placeholder="Treatment Notes" type="text" name="treatment_notes"  class="textarea container_form_right" ></div>
       <br>
+
+      <label for="start">Check-in Date</label>
+
+      <input type="date" id="start" name="check_in"
+       value="2019-07-22"
+       min="2019-01-01" max="2019-12-31">
+
+       <br>
+       <br>
+
       <div><input type="submit" value="Add New Animal"/></div>
+
+
+
 
     </div>
 

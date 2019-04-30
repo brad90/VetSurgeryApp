@@ -25,6 +25,7 @@ end
 post '/vet-surgery/animals' do
   @animals = Animal.new(params)
   @animals.save()
+  @animals.add_visit
   redirect to '/vet-surgery/animals'
 end
 

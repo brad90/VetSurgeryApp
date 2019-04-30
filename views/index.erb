@@ -13,21 +13,21 @@
     <th class="table_data_header">Animal Type</th>
     <th class="table_data_header">Owner Name</th>
     <th class="table_data_header">Check_in</th>
-    <th class="table_data_header">Check_out</th>
     <th class="table_data_header table_data_extra_header">Details</th>
   </tr>
 </table>
 
   <% @animals.each do |animal| %>
+  <% if animal.check_out? != true %>
 <table class="table">
   <tr class="table_row">
     <td class="table_data"><%= animal.name%></td>
     <td class="table_data"><%= animal.type_of_animal%></td>
     <td class="table_data"><%= animal.owner_name%></td>
     <td class="table_data"><%= animal.check_in %></td>
-    <td class="table_data"><%= animal.name%></td>
     <td class=" table_data table_data_extra"><a href="/vet-surgery/animals/<%= animal.id %>">Show Details</a></td>
   </tr>
 
 </table>
+<%end%>
 <%end%>

@@ -16,9 +16,9 @@ class Animal
     @owner_email = options['owner_email']
     @owner_phone_number = options['owner_phone_number']
     @assigned_vet = options['assigned_vet']
-    # @treatment_notes = options['treatment_notes']
-    # @check_in = options['check_in']
-    # @check_out = options['check_out']
+    @treatment_notes = options['treatment_notes']
+    @check_in = options['check_in']
+    @check_out = options['check_out']
   end
 
 
@@ -32,7 +32,10 @@ class Animal
       owner_name,
       owner_email,
       owner_phone_number,
-      assigned_vet
+      assigned_vet,
+      treatment_notes,
+      check_in,
+      check_out
     )VALUES(
       $1,
       $2,
@@ -40,19 +43,24 @@ class Animal
       $4,
       $5,
       $6,
-      $7
+      $7,
+      $8,
+      $9,
+      $10
       )RETURNING id"
-    values = [@name, @dob, @type_of_animal, @owner_name, @owner_email, @owner_phone_number, @assigned_vet]
+    values = [@name, @dob, @type_of_animal, @owner_name, @owner_email,
+              @owner_phone_number, @assigned_vet, @treatment_notes,
+              @check_in, @check_out]
     results = SqlRunner.run(sql, values)
     @id = results[0]['id']
   end
 
   def update
     sql = "UPDATE animals SET (name, dob, type_of_animal, owner_name,
-    owner_email, owner_phone_number, assigned_vet)
+    owner_email, owner_phone_number, assigned_vet, treatment_notes, check_in, check_out)
     = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
     values = [@name, @dob, @type_of_animal, @owner_name, @owner_email,
-    @owner_phone_number, @assigned_vet, @id]
+    @owner_phone_number, @assigned_vet, @treatment_notes, @check_in, @check_out, @id]
     SqlRunner.run(sql,values)
   end
   #
@@ -80,14 +88,22 @@ class Animal
     return visit.check_in
   end
 
-  def check_out
-    sql = "SELECT * FROM visits
-          WHERE animal_id = $1"
-    values=[@id]
-    result = SqlRunner.run(sql, values)
-    visit = result.map { |data| Visit.new(data)}.first
-    return visit.check_out
+  def add_visit
+    sql = "INSERT INTO visits(
+    animal_id,
+    check_in,
+    check_out,
+    treatment_notes
+    )VALUES(
+    $1,
+    $2,
+    $3,
+    $4
+    )"
+    values =[@id, @check_in, @treatment_notes]
+    SqlRunner.run(sql, values)
   end
+
 
 
 
@@ -122,20 +138,14 @@ class Animal
   end
 
 
-  # def add_visit
-  #   sql = "INSERT INTO visits(
-  #   animal_id,
-  #   check_in,
-  #   check_out,
-  #   treatment_notes
-  #   )VALUES(
-  #   $1,
-  #   $2,
-  #   $3,
-  #   $4
-  #   )"
-  #   value =[@id, @]
-  # end
+
+
+  def check_out?
+    sql = " SELECT * FROM animals WHERE check_out IS NULL"
+    results = SqlRunner.run(sql)
+    animal_check_out = results.map{|animal| Animal.new(animal)}
+    return animal_check_out
+  end
 
 
 
