@@ -8,17 +8,11 @@
     </a>
   </div>
 
-  <form method="post" action="/visits" class="container_form">
+  <form method="POST" action="/visits/<%=@visit.id%>" class="container_form">
 
 
     <input  type="textarea" id="start" name="animal_id" value="<%= @visit.animal_id%>"
      hidden >
-
-
-
-
-
-
 
     <div class="container_form_left">
 
