@@ -38,16 +38,16 @@
   <div class="flex-container flex-container_end">
     <div class="margin_right">
       <a href= "/animals/<%=@animal.id%>/edit" >
-        <button class="button margin_button" id="button_show">Update Animal</button>
+        <button class="button margin_button " id='update_button' >Update Animal</button>
       </a>
     </div>
+
 
     <div>
       <br>
       <form action="/animals/<%=@animal.id%>/delete" method="POST">
-        <div><input type="submit" value="Delete Animal" id="button_show"/></div>
+        <div><input type="submit" value="Delete Animal" id="button_delete"/></div>
       </form>
-
     </div>
 
 

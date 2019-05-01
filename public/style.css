@@ -1,10 +1,8 @@
-
 /* input:focus, textarea:focus, select:focus{
   outline: none;}
   input, textarea{
     outline: none;
   }
-
   input[type=text] {
     padding:5px;
     outline:none;
@@ -12,12 +10,10 @@
     width:300px;
     height:30px;
   }
-
   input:focus {
     outline: none;
     border-bottom: 2px solid black;
   }
-
   input[type=submit] {
     display: grid;
     grid-row:15;
@@ -29,11 +25,9 @@
     text-align: center;
     background-color: #FFD700;
   }
-
   input[type=submit]:hover {
     cursor: pointer;
   }
-
   input[placeholder] {
     font-size: 18px;
     font-family: 'Roboto', sans-serif;

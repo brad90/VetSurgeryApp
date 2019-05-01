@@ -28,21 +28,19 @@
 <%end%>
 <br>
 
-<div class="flex-container">
+    <div class="flex-container flex-container_end">
+      <div class="margin_right">
+        <a href="/staffs/<%=@staff.id%>/edit" >
+          <button class="button margin_button " id='update_button' >Update Staff Info</button>
+        </a>
+      </div>
 
-  <div class="margin_right">
-    <button class="button">
-      <a class="flex-item" href="/staffs/<%=@staff.id%>/edit">
-        Update Staff Info
-      </a>
-      </button>
-    </div>
 
-    <div>
-      <br>
-      <form action= "/staffs/<%= @staff.id %>/delete" method="POST">
-        <input class="flex-item" type="submit" value="Delete from records"/>
-      </form>
-    </div>
+      <div>
+        <br>
+        <form action="/staffs/<%= @staff.id %>/delete" method="POST">
+          <div><input type="submit" value="Delete from records" id="button_delete"/></div>
+        </form>
+      </div>
 
   </div>

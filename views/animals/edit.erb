@@ -1,8 +1,9 @@
 
-<h2>Edit <%= @animal.name %></h2>
-<div>
-  <form method="POST" action="/animals/<%=@animal.id%>" class="container_form">
 
+<div>
+
+  <form method="POST" action="/animals/<%=@animal.id%>" class="container_form">
+    <h1>Edit <%= @animal.name %>'s Details</h1>
     <h3 class="form_header"> Animals Details </h3>
     <input type="text" name="name" class="container_form_left" value="<%= @animal.name %>"/>
 
@@ -33,9 +34,9 @@
     <br>
 
 
-    <div>
-      <label for="vet_select">Select Vet:</label>
-      <select name="assigned_vet" id="vet_select" selected="<%= @animal.assigned_vet %>">
+    <div class="padding_top">
+      <h3 class="form_header padding_bottom"> Select Vet: </h3>
+      <select  name="assigned_vet" id="vet_select" selected="<%= @animal.assigned_vet %>">
         <% @staff.each do |vet| %>
         <% if vet.id == @animal.assigned_vet %>
         <option value=<%= vet.id %> selected><%= vet.first_name.capitalize %></option>
@@ -46,15 +47,12 @@
       </select>
     </div>
 
-    <div class = "container_form_left">
-      <div><input type="submit" value="Add New Animal"/></div>
+    <div class = "container_form_left padding_top">
+      <div><input type="submit" value="Update Animal Details"/></div>
     </div>
 
-    <div class = "container_form_right">
-      <div><a  href="visits/"><h4 class="button">Register new pet+</h4></a></div>
-    </div>
 
-    
+
 
 </form>
 
