@@ -126,6 +126,9 @@ br{
 .padding_bottom{
   padding-bottom: 10%;
 }
+.padding_bottom2{
+  padding-bottom: 5%;
+}
 
 .padding_top{
   padding-top: 10%;
@@ -146,7 +149,6 @@ br{
   padding-bottom:10px;
   margin-bottom: 25px;
   align-items: center;
-  border:2px solid black;
 
 
 
@@ -246,4 +248,8 @@ br{
 
 .margin-bottom{
   margin-bottom: 5%;
+}
+
+.margin-top2{
+  margin-bottom: 3%;
 }
