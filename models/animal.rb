@@ -53,7 +53,7 @@ class Animal
     @owner_phone_number, @assigned_vet, @id]
     SqlRunner.run(sql,values)
   end
-  #
+
   def delete()
     sql = "DELETE FROM animals WHERE id = $1"
     values = [@id]
@@ -124,13 +124,13 @@ class Animal
   end
 
 
-  def show_check_in_date_hospital
-    sql = "SELECT * FROM visits WHERE animal_id = $1 ORDER BY check_in DESC LIMIT 1"
-    values = [@id]
-    result = SqlRunner.run(sql,values)
-    visits = result.map{|data| Visit.new(data)}.first
-    return visits.check_in
-  end
+  # def show_check_in_date_hospital
+  #   sql = "SELECT * FROM visits WHERE animal_id = $1 ORDER BY check_in DESC LIMIT 1"
+  #   values = [@id]
+  #   result = SqlRunner.run(sql,values)
+  #   visits = result.map{|data| Visit.new(data)}.first
+  #   return visits.check_in
+  # end
 
   def check_out_animal_from_hospital
     sql = "UPDATE visits SET check_out = TRUE WHERE animal_id = $1"
@@ -139,13 +139,25 @@ class Animal
   end
 
 
-  def is_animal_checked_out_of_hospital
-    sql = "SELECT * FROM visits WHERE animal_id = $1 ORDER BY check_in DESC LIMIT 1"
+  # def is_animal_checked_out_of_hospital
+  #   sql = "SELECT * FROM visits WHERE animal_id = $1 ORDER BY check_in DESC LIMIT 1"
+  #   values = [@id]
+  #   result = SqlRunner.run(sql,values)
+  #   visits = result.map{|data| Visit.new(data)}.first
+  #   visits.check_out
+  #   return visits.check_out
+  # end
+
+  def is_animal_checked_out_of_hospital_and_show_date
+    sql = "SELECT visits.* FROM visits INNER JOIN animals ON visits.animal_id = animals.id
+          WHERE animals.id = $1 ORDER BY check_in DESC LIMIT 1"
     values = [@id]
     result = SqlRunner.run(sql,values)
     visits = result.map{|data| Visit.new(data)}.first
-    return visits.check_out
+    return visits
   end
+
+
 
 
 

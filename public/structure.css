@@ -59,6 +59,7 @@ table,td {
 th{
   font-weight: 400;
   font-size: 18px;
+  border-bottom:10px solid #EFEFEF;
 }
 
 br{
@@ -200,6 +201,7 @@ br{
   padding:2%;
   background-color: white;
   border-right: 1px solid grey;
+  border-bottom:10px solid #EFEFEF;
 }
 
 .table_data_extra{
@@ -215,6 +217,10 @@ br{
 
 .table_row{
   background-color: white;
+}
+
+.table_header_style{
+
 }
 
 

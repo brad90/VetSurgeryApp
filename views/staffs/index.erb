@@ -10,16 +10,13 @@
       <th class="table_data_header">Last Name</th>
       <th class="table_data_header table_data_extra_header">Details</th>
     </tr>
-  </table>
 
   <% @staff.each do |individual| %>
-  <table class="table">
     <tr class="table_row">
       <td class="table_data"><%= individual.id%></td>
       <td class="table_data"><%= individual.first_name.capitalize%></td>
       <td class="table_data"><%= individual.last_name.capitalize%></td>
       <td class=" table_data table_data_extra"><a href="/staffs/<%= individual.id %>">Show Details</a></td>
     </tr>
-
-  </table>
   <%end%>
+  </table>

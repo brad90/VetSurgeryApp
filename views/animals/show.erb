@@ -29,6 +29,7 @@
 
 <div class="flex-container flex-container_end">
   <% @animal_visits.each do |visit|%>
+  
   <h3 class="flex-item4">
     <%= visit.check_in%> : <%=visit.treatment_notes %></h3>
     <% end %>
@@ -47,6 +48,6 @@
         <div><input type="submit" value="Delete Animal" id="button_show"/></div>
       </form>
 
-      
+
     </div>
   </div>
