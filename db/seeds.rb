@@ -72,35 +72,35 @@ animal4.save
 visit1 = Visit.new({
   'animal_id' => animal1.id,
   'check_in' => '2018-06-19',
-  'check_out' => '0',
+  'check_out' => false,
   'treatment_notes' => 'Dog is sick from cat flu'
   })
 
 visit2 = Visit.new({
   'animal_id' => animal2.id,
   'check_in' => '2018-05-19',
-  'check_out' => '0',
+  'check_out' => false,
   'treatment_notes' => 'Dog is sick from cat flu'
   })
 
 visit3 = Visit.new({
   'animal_id' => animal3.id,
   'check_in' => '2018-09-19',
-  'check_out' => '0',
+  'check_out' => false,
   'treatment_notes' => 'Dog is sick from cat flu'
   })
 
 visit4 = Visit.new({
   'animal_id' => animal3.id,
   'check_in' => '2018-10-19',
-  'check_out' => '0',
+  'check_out' => false,
   'treatment_notes' => 'The dog swallowed a lego brick'
   })
 
   visit5 = Visit.new({
     'animal_id' => animal4.id,
     'check_in' => '2018-11-19',
-    'check_out' => '0',
+    'check_out' => false,
     'treatment_notes' => 'The dog swallowed a lego brick'
     })
 

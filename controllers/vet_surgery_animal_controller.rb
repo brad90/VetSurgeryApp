@@ -75,6 +75,6 @@ end
 
 post '/animals/:id/check_out' do
   animals = Animal.new(params)
-  animals.check_out
+  animals.check_out_animal_from_hospital
   redirect to "/animals"
 end

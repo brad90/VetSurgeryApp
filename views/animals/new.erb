@@ -7,11 +7,11 @@
     <br>
     <br>
     <h3> Animals Details: </h3>
-    <input placeholder="Animal name" type="text" name="name" class="container_form_left">
-    <input placeholder="Animal D.O.B" type="text" name="dob" id="animal_dob" class="container_form_right">
+    <input placeholder="Animal name" type="text" name="name" class="container_form_left" required>
+    <input placeholder="Animal D.O.B" type="text" name="dob" id="animal_dob" class="container_form_right" required>
     <br>
     <br>
-    <input placeholder="Animal species" type="text" name="type_of_animal" id="animal_species" class="container_form_left">
+    <input placeholder="Animal species" type="text" name="type_of_animal" id="animal_species" class="container_form_left" required>
     <br>
     <br>
     <br>
@@ -20,13 +20,13 @@
 
 
     <h3> Owners Details: </h3>
-    <input placeholder="Owners name" type="text" name="owner_name" class="container_form_left">
-    <input placeholder="Owners email" type="text" name="owner_email"  class="container_form_right">
+    <input placeholder="Owners name" type="text" name="owner_name" class="container_form_left" required>
+    <input placeholder="Owners email" type="text" name="owner_email"  class="container_form_right" required>
 
     <br>
     <br>
 
-    <input placeholder="Owners phone number" type="text" name="owner_phone_number" id="animal_species" class="container_form_left">
+    <input placeholder="Owners phone number" type="text" name="owner_phone_number" id="animal_species" class="container_form_left" required>
     <br>
     <br>
     <h3 class="padding_top"> Assigned Vet </h3>
@@ -39,7 +39,7 @@
         <% end %>
       </select>
 
-      
+
 
 
       <div><input type="submit" value="Add New Animal"/></div>

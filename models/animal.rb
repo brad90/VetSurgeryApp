@@ -123,19 +123,31 @@ class Animal
     return animal_list
   end
 
-  def check_out
-    sql = "UPDATE visits SET check_out = 1 WHERE animal_id = $1"
+
+  def show_check_in_date_hospital
+    sql = "SELECT * FROM visits WHERE animal_id = $1 ORDER BY check_in DESC LIMIT 1"
+    values = [@id]
+    result = SqlRunner.run(sql,values)
+    visits = result.map{|data| Visit.new(data)}.first
+    return visits.check_in
+  end
+
+  def check_out_animal_from_hospital
+    sql = "UPDATE visits SET check_out = TRUE WHERE animal_id = $1"
     values = [@id]
     SqlRunner.run(sql,values)
   end
 
-  def checked_out
+
+  def is_animal_checked_out_of_hospital
     sql = "SELECT * FROM visits WHERE animal_id = $1 ORDER BY check_in DESC LIMIT 1"
     values = [@id]
     result = SqlRunner.run(sql,values)
     visits = result.map{|data| Visit.new(data)}.first
     return visits.check_out
   end
+
+
 
   def upcoming_bokings
     sql = "SELECT * FROM visits WHERE check_in >= '2018-07-19' ORDER BY check_in DESC LIMIT 1"

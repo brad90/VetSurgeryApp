@@ -15,26 +15,27 @@
     <th class="table_data_header">Animal Name</th>
     <th class="table_data_header">Animal Type</th>
     <th class="table_data_header">Owner Name</th>
-    <th class="table_data_header">Check_in</th>
-    <th class="table_data_header table_data_extra_header">Details</th>
+    <th class="table_data_header">Check-in Date</th>
+    <th class="table_data_header ">Details</th>
+    <th class="table_data_header table_data_extra_header">Check Out</th>
   </tr>
-</table>
-
 
 
 <% @animals.each do |animal| %>
-<% if animal.check_out == '0'%>
-<table class="table">
+<% next if animal.is_animal_checked_out_of_hospital == 't' %>
   <tr class="table_row">
     <td class="table_data"><%= animal.name%></td>
     <td class="table_data"><%= animal.type_of_animal%></td>
     <td class="table_data"><%= animal.owner_name%></td>
-    <td class="table_data"><%= animal.name %></td>
-    <td class=" table_data table_data_extra"><a href="/animals/<%= animal.id %>">Show Details</a></td>
+    <td class="table_data"><%= animal.show_check_in_date_hospital %></td>
+    <td class=" table_data "><a href="/animals/<%= animal.id %>">Show Details</a></td>
+    <td class="table_data table_data_extra"><form action="/animals/<%=animal.id%>/check_out" method="POST">
+      <input type="submit" value="check out animal" id=""/>
+    </form></td>
   </tr>
+<%end%>
 </table>
-<%end%>
-<%end%>
+
 <br>
 <br>
 <br>

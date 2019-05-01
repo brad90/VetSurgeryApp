@@ -9,7 +9,7 @@ class Visit
     @id = options['id'].to_i if options['id']
     @animal_id = options['animal_id']
     @check_in = options['check_in']
-    @check_out = options['check_out'] || 0
+    @check_out = options['check_out'] || false
     @treatment_notes = options['treatment_notes']
   end
 
