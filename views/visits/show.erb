@@ -1,0 +1,21 @@
+
+
+
+<div  class="flex-container ">
+  <a id="name"  href="animals/new">
+  <h1 class="padding_left"><%= @visit.return_animal_name%></h1>
+  </a>
+</div>
+
+<div  class="flex-container ">
+  <a id="name"  href="animals/new">
+  <h1 class="padding_left"><%= @visit.check_in%></h1>
+  </a>
+</div>
+
+<div class="flex-container flex-container_end">
+  <div class="margin_right">
+    <a href= "/visits/<%=@visit.id%>/edit" >
+      <button class="button margin_button" id="button_show">Update Treatment Notes</button>
+    </a>
+  </div>

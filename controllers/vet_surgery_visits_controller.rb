@@ -27,6 +27,7 @@ end
 
 #Show only one vets information in the vets
 get '/visits/:id/edit' do
+  @animals = Animal.all()
   @visit = Visit.find(params[:id])
 erb(:'visits/edit')
 end

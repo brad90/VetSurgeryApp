@@ -2,17 +2,25 @@
 
 <div>
 
+  <div  class="flex-container ">
+    <a id="name"  href="/visits/<%=@visit.id%>">
+    <h1 class="padding_left"><%= @visit.return_animal_name%></h1>
+    </a>
+  </div>
+
   <form method="post" action="/visits" class="container_form">
 
 
+    <input  type="textarea" id="start" name="animal_id" value="<%= @visit.animal_id%>"
+     hidden >
+
+
+
+
+
+
+
     <div class="container_form_left">
-
-      <select name="animal_id" id="vet_select" >
-        <% @animals.each do|animal| %>
-        <option value= <%= animal.id %>><%= animal.name%></option>
-        <% end %>
-      </select>
-
 
 
       <label for="start">Start date:</label>
@@ -21,11 +29,8 @@
        value="2019-07-22"
        min="2019-01-01" max="2019-12-31">
 
-       <div>
-         <input placeholder="Treatment Notes" type="text" name="treatment_notes"  id="text_box">
-       </div>
-
-
+       <input placeholder="Enter Treatment Notes" type="textarea" id="start" name="treatment_notes"
+        required >
 
       <div><input type="submit" value="Add New Animal"/></div>
     </div>
