@@ -2,7 +2,7 @@ require_relative('../db/sqlrunner.rb')
 
 class Visit
 
-  attr_reader :id, :pet_id, :check_in, :check_out
+  attr_reader :id, :animal_id, :check_in, :check_out
   attr_accessor :treatment_notes
 
   def initialize(options)
