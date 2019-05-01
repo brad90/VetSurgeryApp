@@ -73,3 +73,17 @@ select {
   border-radius: 4px;
   background-color: #f1f1f1;
 }
+
+.selection{
+  width: 150px;
+  padding: 16px 20px;
+  height:30px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+
+}
+
+.treatment_notes{
+  padding:50px;
+}

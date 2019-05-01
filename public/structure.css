@@ -65,6 +65,18 @@ br{
   height: 5px;
 }
 
+.background_white{
+  background-color: white;
+}
+
+.padding_left{
+  padding-left: 15%;
+}
+
+.booking_info{
+  font-weight: lighter;
+}
+
 
 .padding_top{
   padding-top:10%

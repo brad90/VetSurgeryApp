@@ -4,26 +4,27 @@
 
   <form method="post" action="/visits" class="container_form">
 
+  <h1> Create New Visit: </h1>
 
     <div class="container_form_left">
-
-      <select name="animal_id" id="vet_select" >
+      <select class="selction" name="animal_id" id="vet_select" >
         <% @animals.each do|animal| %>
         <option value= <%= animal.id %>><%= animal.name%></option>
         <% end %>
       </select>
-
-
-
-      <label for="start">Start date:</label>
-
-      <input type="date" id="start" name="check_in"
-       value="2019-07-22"
-       min="2019-01-01" max="2019-12-31">
-
-      <div><input type="submit" value="Add New Animal"/></div>
     </div>
 
-  </form>
+
+    <div class="container_form_right">
+      <label class="padding_top"for="start">Start date:</label>
+      <input class="padding_top" type="date" id="start" name="check_in"
+      value="2019-07-22"
+      min="2019-01-01" max="2019-12-31">
+    </div>
+
+    <div><input type="submit" value="Create New Visit"/></div>
+  </div>
+
+</form>
 
 </div>

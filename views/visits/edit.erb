@@ -1,34 +1,26 @@
+<form method="POST" action="/visits/<%=@visit.id%>" class="container_form">
 
-
-<div>
-
-  <div  class="flex-container ">
-    <a id="name"  href="/visits/<%=@visit.id%>">
-    <h1 class="padding_left"><%= @visit.return_animal_name%></h1>
-    </a>
+  <div>
+    <h1 class="padding_bottom"> Visit Detail: <%= @visit.return_animal_name%>'s</h1>
   </div>
 
-  <form method="POST" action="/visits/<%=@visit.id%>" class="container_form">
-
-
-    <input  type="textarea" id="start" name="animal_id" value="<%= @visit.animal_id%>"
+  <input  type="textarea" id="start" name="animal_id" value="<%= @visit.animal_id%>"
      hidden >
 
     <div class="container_form_left">
-
-
-      <label for="start">Start date:</label>
-
-      <input type="date" id="start" name="check_in"
+      <label class="padding_bottom" for="check_in">Start date:</label>
+      <input type="date" id="check_in" name="check_in"
        value="2019-07-22"
        min="2019-01-01" max="2019-12-31">
-
-       <input placeholder="Enter Treatment Notes" type="textarea" id="start" name="treatment_notes"
-        required >
-
-      <div><input type="submit" value="Add New Animal"/></div>
     </div>
 
-  </form>
+    <div class="container_form_right">
+    <label class="padding_bottom" for="treatment_notes">Treatment Notes:</label>
+    <input  placeholder="Enter Treatment Notes" type="textarea" class="treatment_notes" id="treatment_notes" name="treatment_notes"
+     required >
+    </div>
 
-</div>
+    <div class="padding_top"><input type="submit" value="Update Visit Info"/></div>
+
+
+</form>

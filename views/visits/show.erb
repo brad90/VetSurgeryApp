@@ -1,21 +1,17 @@
 
 
 
-<div  class="flex-container ">
-  <a id="name"  href="animals/new">
-  <h1 class="padding_left"><%= @visit.return_animal_name%></h1>
-  </a>
-</div>
-
-<div  class="flex-container ">
-  <a id="name"  href="animals/new">
-  <h1 class="padding_left"><%= @visit.check_in%></h1>
-  </a>
-</div>
-
-<div class="flex-container flex-container_end">
-  <div class="margin_right">
-    <a href= "/visits/<%=@visit.id%>/edit" >
-      <button class="button margin_button" id="button_show">Update Treatment Notes</button>
-    </a>
+  <div class="background_white container_form">
+    <h1>Booking Details:</h1>
+    <div class="container_form_left">
+    <h2 class="booking_info"> Animal Name:    <%= @visit.return_animal_name %></h2>
+    </div>
+    <div class="container_form_right">
+    <h2 class="booking_info">Check-in Date:   <%= @visit.check_in%></h2>
+    </div>
+    <div class="container_form_right padding_left">
+      <a href= "/visits/<%=@visit.id%>/edit" >
+        <button class="button margin_button" id="button_show">Update Treatment Notes</button>
+      </a>
+    </div>
   </div>
