@@ -10,14 +10,13 @@
     <th class="table_data_header">Check_in</th>
     <th class="table_data_header table_data_extra_header">Details</th>
   </tr>
-</table>
 
 <% @visits.each do |visit| %>
-<table class="table">
+<% next if visit.check_out == 't' %>
   <tr class="table_row">
     <td class="table_data"><%= visit.return_animal_name %></td>
     <td class="table_data"><%= visit.check_in %></td>
     <td class=" table_data table_data_extra"><a href="/animals/<%= visit.animal_id %>">Show Details</a></td>
   </tr>
+  <%end%>
 </table>
-<%end%>
