@@ -35,9 +35,6 @@ post '/animals' do
   redirect to '/animals/registered-animals'
 end
 
-
-
-
 #Animal Update info
 get '/animals/:id/edit' do
   @staff = Staff.all
