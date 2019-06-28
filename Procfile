@@ -1,1 +1,1 @@
-web: bundle exec Sinatra server -p $PORT
+web: bundle exec ruby app.rb -p $PORT
