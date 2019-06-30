@@ -14,7 +14,7 @@ require_relative('../models/visit')
 get'/'do
   @animals = Animal.all
   @visits = Visit.all
-erb(:'animals/index')
+erb(:'/index')
 end
 
 get'/registered_animals'do
