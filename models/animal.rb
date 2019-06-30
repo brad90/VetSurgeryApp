@@ -1,6 +1,6 @@
 require_relative('../db/sqlrunner.rb')
 require_relative('./visit.rb')
-require( 'pry-byebug' )
+
 
 
 class Animal

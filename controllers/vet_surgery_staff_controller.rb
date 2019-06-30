@@ -1,8 +1,8 @@
 require('sinatra')
-require('sinatra/contrib/all')
+# require('sinatra/contrib/all')
 require_relative('../models/animal')
 require_relative('../models/staff')
-also_reload('./models/*')
+# also_reload('./models/*')
 
 #Staff Show all
 get'/staffs' do

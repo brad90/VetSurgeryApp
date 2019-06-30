@@ -3,8 +3,8 @@ require('sinatra')
 require_relative('../models/animal')
 require_relative('../models/staff')
 require_relative('../models/visit')
-also_reload('./models/*')
-require( 'pry-byebug' )
+# also_reload('./models/*')
+# require( 'pry-byebug' )
 
 #Staff Show all
 get'/visits' do

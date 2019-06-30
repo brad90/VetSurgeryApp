@@ -1,5 +1,5 @@
 require_relative('../db/sqlrunner.rb')
-require( 'pry-byebug' )
+
 
 class Staff
   attr_reader :first_name, :id
