@@ -16,7 +16,7 @@ get '/staffs/new' do
 end
 
 #Staff save new staff
-post '/staffs' do
+post '/staffs/new' do
   @staff = Staff.new(params)
   @staff.save()
   redirect to '/staffs'
@@ -37,7 +37,7 @@ erb(:'staffs/show')
 end
 
 #Staff save updates
-post'/staffs/:id' do
+post'/staffs/:id/edit' do
   @staff = Staff.new(params)
   @staff.update
   redirect to "/staffs"
