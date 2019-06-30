@@ -5,5 +5,5 @@ require_relative('controllers/vet_surgery_visits_controller.rb')
 require('pg')
 
 get'/' do
-  erb( :'/views/index/index' )
+  erb( :index )
 end
