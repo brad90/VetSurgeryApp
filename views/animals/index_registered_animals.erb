@@ -3,7 +3,7 @@
 </div>
 
 <div class="flex_container_type_2 margin-bottom ">
-  <div class="flex_container_end"><a href="/animals/new"><h4 class="button_type_2 ">Register new pet+</h4></a></div>
+  <div class="flex_container_end"><a href="/new_animal"><h4 class="button_type_2 ">Register new pet+</h4></a></div>
 </div>
 
 
@@ -26,7 +26,7 @@
     <td class="table_data"><%= animal.type_of_animal%></td>
     <td class="table_data"><%= animal.owner_name%></td>
     <td class="table_data"><%= animal.return_number_of_visits_to_vets%></td>
-    <td class=" table_data table_data_extra"><a href="/animals/<%= animal.id %>">Show Details</a></td>
+    <td class=" table_data table_data_extra"><a href="/registered_animals/<%= animal.id %>">Show Details</a></td>
   </tr>
 </table>
 <%end%>

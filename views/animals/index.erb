@@ -4,8 +4,8 @@
 
 <div class="flex-container flex-container_spacing">
   <div><a href="/visits"><h4 class="button_type_2">Up-Coming Visits</h4></a></div>
-  <div><a href="animals/new"><h4 class="button_type_2">Register new pet+</h4></a></div>
-  <div><a href="animals/registered-animals"><h4 class="button_type_2">Show Registered Pets</h4></a></div>
+  <div><a href="/new_animal"><h4 class="button_type_2">Register new pet+</h4></a></div>
+  <div><a href="/registered_animals"><h4 class="button_type_2">Show Registered Pets</h4></a></div>
 </div>
 
 <div class="flex_container flex_container_start  ">
@@ -32,8 +32,8 @@
     <td class="table_data"><%= animal.type_of_animal%></td>
     <td class="table_data"><%= animal.owner_name%></td>
     <td class="table_data"><%= animal.is_animal_checked_out_of_hospital_and_show_date.check_in %></td>
-    <td class=" table_data "><a href="/animals/<%= animal.id %>">Show Details</a></td>
-    <td class="table_data table_data_extra"><form action="/animals/<%=animal.id%>/check_out" method="POST">
+    <td class=" table_data "><a href="/registered_animals/<%= animal.id %>">Show Details</a></td>
+    <td class="table_data table_data_extra"><form action="/<%=animal.id%>/check_out" method="POST">
       <input type="submit" value="check out animal" id=""/>
   </form></td>
   </tr>

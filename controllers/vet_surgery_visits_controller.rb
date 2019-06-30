@@ -12,6 +12,8 @@ get'/visits' do
   erb(:'visits/index')
 end
 
+
+
 #Staff create new booking
 get '/visits/new' do
   @animals = Animal.all
@@ -19,7 +21,7 @@ get '/visits/new' do
 end
 
 #Staff save new booking
-post '/visits' do
+post '/visits/new' do
   @visits = Visit.new(params)
   @visits.save()
   redirect to '/visits'

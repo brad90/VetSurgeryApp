@@ -1,6 +1,6 @@
 
 
-<div  class="flex-container "><a id="name"  href="animals/new">
+<div  class="flex-container "><a id="name"  href="/new">
   <h1 class="padding_left"><%= @animal.name.capitalize%></h1>
 </a></div>
 
@@ -37,7 +37,7 @@
 
   <div class="flex-container flex-container_end">
     <div class="margin_right">
-      <a href= "/animals/<%=@animal.id%>/edit" >
+      <a href= "/registered_animals/<%=@animal.id%>/edit" >
         <button class="button margin_button " id='update_button' >Update Animal</button>
       </a>
     </div>
@@ -45,7 +45,7 @@
 
     <div>
       <br>
-      <form action="/animals/<%=@animal.id%>/delete" method="POST">
+      <form action="/<%=@animal.id%>/delete" method="POST">
         <div><input type="submit" value="Delete Animal" id="button_delete"/></div>
       </form>
     </div>

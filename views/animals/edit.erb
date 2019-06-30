@@ -2,7 +2,7 @@
 
 <div>
 
-  <form method="POST" action="/animals/<%=@animal.id%>" class="container_form">
+  <form method="POST" action="/<%=@animal.id%>" class="container_form">
     <h1>Edit <%= @animal.name %>'s Details</h1>
     <h3 class="form_header"> Animals Details </h3>
     <input type="text" name="name" class="container_form_left" value="<%= @animal.name %>"/>
