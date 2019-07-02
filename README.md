@@ -17,7 +17,7 @@ We had to code the project in Ruby using Sinatra as it's light framework and Pos
 
 
 
-What I learnt and enjoyed
+<h2> What I learnt and enjoyed </h2>
 
 Restful routes:
 
