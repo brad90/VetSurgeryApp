@@ -14,3 +14,16 @@ We had to code the project in Ruby using Sinatra as it's light framework and Pos
 -  Be able to assign a vet to a animal.
 -  Be able to check out an animal from the vet surgery.
 -  Be able to see the past treatment notes. 
+
+
+
+What I learnt and enjoyed
+
+Restful routes:
+
+
+Postgres
+
+
+
+
